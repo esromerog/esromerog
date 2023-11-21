@@ -16,14 +16,18 @@
         "description": "Communicating mental imagery through a P300-based BCI with the help of generative AI.",
         "role": "Programmer · Research",
         "links": {
-            "Scientific Transcript": "./Docs/BCIAwardSubmission.pdf"
+            "Scientific Transcript": "./Docs/BCIAwardSubmission.pdf",
+            "Video": "https://youtu.be/9F4zXUAnIdI"
         }
     },
     "beat-motion": {
         "name": "Beat Motion",
         "short": "HCI · Music Production · Motion tracking",
         "description": "An interface between the body and sound. A Kinect-based motion tracking app for the body's motino to send MIDI signals.",
-        "role": "Lead programmer"
+        "role": "Lead programmer",
+        "links": {
+            "Video": "https://youtu.be/j5Xr8TlIX_A"
+        }
     },
     "waterfall": {
         "name": "Waterfall",

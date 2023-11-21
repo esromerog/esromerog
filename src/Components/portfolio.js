@@ -64,27 +64,27 @@ function CompressedInfoCard({ obj }) {
         gsap.to(window, {
             scrollTo: {
                 y: objRef.current,
-                offsetY: y,
+                offsetY: 0,
             },
             duration: 0.5,
         })
         gsap.to(objRef.current, {
             height: '100vh',
+            pin: true,
             duration: 0.5,
             // onComplete: () => navigate(`/portfolio/${obj.name}`)
         })
-
+        gsap.to(objRef.current, {
+            opacity: 0,
+            duration: 0.5,
+            onComplete: () => setTimeout(()=>navigate(`/portfolio/${obj.name}`), 1000)
+        })
     }
 
     const [expanded, setExpanded] = useState(false);
 
-    function expandCard() {
-        setExpanded(!expanded);
-    }
-
-
     return (
-        <div className={`info-card ${isInCenter && 'center'} ${expanded && 'active'}`} key={obj.name} ref={objRef}>
+        <div className={`info-card ${isInCenter && 'center'}`} key={obj.name} ref={objRef}>
             <div className='row'>
                 <div className='info-card-title'>
                     <h2>{obj.name}</h2>
@@ -98,13 +98,11 @@ function CompressedInfoCard({ obj }) {
                 </div>
             </div>
             <div className='accordion-content'>
-                
                 <div className='info-card-description'>
                     <h3>Role</h3>
                     <p>{obj.role}</p>
                 </div>
             </div>
-            {/*isInCenter && <a type='button' className='expand-button material-symbols-outlined' onClick={expandCard}>expand_all</a>*/}
         </div>
     )
 }

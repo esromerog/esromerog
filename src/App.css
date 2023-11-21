@@ -154,10 +154,13 @@ canvas {
 
 .info-card .accordion-content {
   display: none;
+  transition: all 0.8s ease;
 }
 
 .info-card.active .accordion-content {
   display: block;
+  width: 100%;
+  transition: all 0.8s ease;
 }
 
 .button-list {
@@ -339,6 +342,7 @@ a:active {
   align-items: center;
   justify-content: center;
   height: 35vh;
+  transition: all 0.8s ease;
 }
 
 .info-card.center {
@@ -377,7 +381,7 @@ a:active {
 
 
 .spacer {
-  height: 35vh;
+  min-height: 30vh;
   display: flex;
   scroll-snap-align: start;
   z-index: 100;
@@ -387,6 +391,10 @@ a:active {
   display: none;
 }
 
+
+.accordion-content .info-card-description {
+  margin-left: 50%;
+}
 
 @media (max-width: 600px) {
 
