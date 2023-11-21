@@ -1,0 +1,56 @@
+{
+    "mynd_music": {
+        "name": "Mynd Music",
+        "short": "EEG · VR · Adaptive Environments",
+        "description": "A scientific-artistic project to create an adaptive, highly immersive VR environment influenced by EEG data.",
+        "role": "Creative director · Programmer (Unity/EEG Analysis) · Experience designer",
+        "links": {
+            "GitHub": "https://github.com/esromerog/Mynd-Music",
+            "3D Recording": "https://www.youtube.com/watch?v=Glc25Y9Vxaw",
+            "Transcript": "./Docs/Mynd.pdf"
+        }
+    },
+    "thousand-word-speller": {
+        "name": "A thousand Word Speller",
+        "short": "EEG · Generative AI",
+        "description": "Communicating mental imagery through a P300-based BCI with the help of generative AI.",
+        "role": "Programmer · Research",
+        "links": {
+            "Scientific Transcript": "./Docs/BCIAwardSubmission.pdf"
+        }
+    },
+    "beat-motion": {
+        "name": "Beat Motion",
+        "short": "HCI · Music Production · Motion tracking",
+        "description": "An interface between the body and sound. A Kinect-based motion tracking app for the body's motino to send MIDI signals.",
+        "role": "Lead programmer"
+    },
+    "waterfall": {
+        "name": "Waterfall",
+        "short": "HCI · VR · EEG · Adaptive biofeedback",
+        "description": "An immersive biofeedback project where concentration, measure by beta EEG waves, controls the flow of time in a VR platformer game.",
+        "role": "Programmer (Unity/EEG Analysis)· Designer",
+        "links": {
+            "GitHub": "https://github.com/esromerog/Waterfall"
+        }
+    },
+    "mutual-wave-machine": {
+        "name": "Mutual Wave Machine",
+        "short": "Hyperscanning · Creative coding",
+        "description": "Implementation of Suzanne Dikker's Mutual Wave Machine at my local college",
+        "role": "3D Designer",
+        "links": {
+            "Original Project": "http://www.suzannedikker.net/mutualwavemachine"
+        }
+    },
+    "quantified-self": {
+        "name": "You: Quantified Self",
+        "short": "EEG · LSL · Creative Coding · Front-end development",
+        "description": "An educational-oriented website to easily connect physiological data to customizable creative visualization.",
+        "role": "Front-end developer · UX Designer · Signal acquisition/preprocessing",
+        "links": {
+            "GitHub": "https://github.com/esromerog/QuantifiedSelf",
+            "Website": "https://creative-quantified-self.netlify.app/devices"
+        }
+    }
+}
