@@ -104,25 +104,25 @@ export function MyndMusic() {
                         <ButtonList obj={info} />
                     </div>
                     <div className='image-carousel'>
-                        <img className="first-image" src="esromerog/images/mynd_music/presentation.jpg"></img>
+                        <img className="first-image" src="/esromerog/images/mynd_music/presentation.jpg"></img>
                         <Carousel fade touch>
                             <Carousel.Item>
-                                <img src="esromerog/images/mynd_music/intro.png"></img>
+                                <img src="/esromerog/images/mynd_music/intro.png"></img>
                             </Carousel.Item>
                             <Carousel.Item>
-                                <img src="esromerog/images/mynd_music/forest.png"></img>
+                                <img src="/esromerog/images/mynd_music/forest.png"></img>
                             </Carousel.Item>
                             <Carousel.Item>
-                                <img src="esromerog/images/mynd_music/coffee.png"></img>
+                                <img src="/esromerog/images/mynd_music/coffee.png"></img>
                             </Carousel.Item>
                             <Carousel.Item>
-                                <img src="esromerog/images/mynd_music/coffee2.png"></img>
+                                <img src="/esromerog/images/mynd_music/coffee2.png"></img>
                             </Carousel.Item>
                             <Carousel.Item>
-                                <img src="esromerog/images/mynd_music/dessert.png"></img>
+                                <img src="/esromerog/images/mynd_music/dessert.png"></img>
                             </Carousel.Item>
                             <Carousel.Item>
-                                <img src="esromerog/images/mynd_music/end.png"></img>
+                                <img src="/esromerog/images/mynd_music/end.png"></img>
                             </Carousel.Item>
                         </Carousel>
                     </div>
@@ -151,7 +151,7 @@ export function AThousandWordSpeller() {
 
     return (
         <div ref={mainDivRef}>
-            <video className="top-image" autoPlay={true} loop={true} src='esromerog/images/thousand-word-speller/video.mov' muted={true} />
+            <video className="top-image" autoPlay={true} loop={true} src='/esromerog/images/thousand-word-speller/video.mov' muted={true} />
             <div className='expanded no-margin'>
                 <div className='initial-intro'>
                     <h2>A Thousand-Word Speller</h2>
@@ -173,28 +173,28 @@ export function AThousandWordSpeller() {
                     <div className='image-carousel'>
                         <Carousel fade touch>
                             <Carousel.Item>
-                                <img src="esromerog/images/thousand-word-speller/dog.png"></img>
+                                <img src="/esromerog/images/thousand-word-speller/dog.png"></img>
                                 <Carousel.Caption>
                                     <h3>Prompt</h3>
                                     <p>Space, dog, pixel-art</p>
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item>
-                                <img src="esromerog/images/thousand-word-speller/dolphin.png"></img>
+                                <img src="/esromerog/images/thousand-word-speller/dolphin.png"></img>
                                 <Carousel.Caption>
                                     <h3>Prompt</h3>
                                     <p>Dolphin, beach, sunset</p>
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item>
-                                <img src="esromerog/images/thousand-word-speller/lion.png"></img>
+                                <img src="/esromerog/images/thousand-word-speller/lion.png"></img>
                                 <Carousel.Caption>
                                     <h3>Prompt</h3>
                                     <p>Space, lion, digital art</p>
                                 </Carousel.Caption>
                             </Carousel.Item>
                             <Carousel.Item>
-                                <img src="esromerog/images/thousand-word-speller/restaurant.png"></img>
+                                <img src="/esromerog/images/thousand-word-speller/restaurant.png"></img>
                                 <Carousel.Caption>
                                     <h3>Prompt</h3>
                                     <p>Future, restaurant, digital art</p>
@@ -247,10 +247,10 @@ export function Waterfall() {
                     <div className='image-carousel'>
                         <Carousel fade touch>
                             <Carousel.Item>
-                                <img src="esromerog/images/waterfall/process.jpeg"></img>
+                                <img src="/esromerog/images/waterfall/process.jpeg"></img>
                             </Carousel.Item>
                             <Carousel.Item>
-                                <img src="esromerog/images/waterfall/testing.png"></img>
+                                <img src="/esromerog/images/waterfall/testing.png"></img>
                             </Carousel.Item>
                         </Carousel>
                     </div>
@@ -278,7 +278,7 @@ export function BeatMotion() {
 
     return (
         <div ref={mainDivRef}>
-            <video className="top-image" autoPlay={true} loop={true} muted={true} src='esromerog/images/beat-motion/video.mp4' />
+            <video className="top-image" autoPlay={true} loop={true} muted={true} src='/esromerog/images/beat-motion/video.mp4' />
             <div className='expanded no-margin'>
                 <div className='initial-intro'>
                     <h2>Beat Motion</h2>
@@ -301,7 +301,7 @@ export function BeatMotion() {
                         <ButtonList obj={info} />
                     </div>
                     <div className='image-carousel'>
-                        <img src="esromerog/images/beat-motion/process.png"></img>
+                        <img src="/esromerog/images/beat-motion/process.png"></img>
                     </div>
                 </div>
             </div>
@@ -395,10 +395,10 @@ export function MutualWaveMachine() {
                     <div className='image-carousel'>
                         <Carousel fade touch>
                             <Carousel.Item>
-                                <img src="esromerog/images/mutual-wave-machine/sitting.jpeg"></img>
+                                <img src="/esromerog/images/mutual-wave-machine/sitting.jpeg"></img>
                             </Carousel.Item>
                             <Carousel.Item>
-                                <img src="esromerog/images/mutual-wave-machine/closeup.jpeg"></img>
+                                <img src="/esromerog/images/mutual-wave-machine/closeup.jpeg"></img>
                             </Carousel.Item>
                         </Carousel>
                     </div>
