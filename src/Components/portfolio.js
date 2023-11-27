@@ -3,17 +3,21 @@ import portfolioInfo from '../portfolio_info.json'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route, useNavigate, Link, useParams } from 'react-router-dom';
 import Me from './me'
+import { MyndMusic, AThousandWordSpeller, Waterfall, BeatMotion, QuantifiedSelf, MutualWaveMachine } from './portfolioItems'
 
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
-document.body.style.overflow = "scroll";
-document.body.style.backgroundColor = "white";
 
 
 export default function Portfolio() {
+    useEffect(() => {
+        document.body.style.overflow = "scroll";
+        document.body.style.backgroundColor = "white";
+    }, [])
+
     return (
         <div className='portfolio-main'>
             <div className='main-background'></div>
@@ -21,14 +25,19 @@ export default function Portfolio() {
             <NavBar />
             <Routes>
                 <Route path="/" element={<InfoCards />} />
-                <Route path="/:currentSelection" />
+                <Route path="/beat-motion" element={<BeatMotion />} />
+                <Route path="/mynd_music" element={<MyndMusic />} />
+                <Route path="/thousand-word-speller" element={<AThousandWordSpeller />} />
+                <Route path="/waterfall" element={<Waterfall />} />
+                <Route path="/mutual-wave-machine" element={<MutualWaveMachine />} />
+                <Route path="/quantified-self" element={<QuantifiedSelf />} />
                 <Route path="/about" element={<Me />} />
             </Routes>
         </div>
     )
 }
 
-function CompressedInfoCard({ obj }) {
+function CompressedInfoCard({ obj, keyName }) {
 
     const [isInCenter, setIsInCenter] = useState(false);
     const objRef = useRef(null);
@@ -77,24 +86,23 @@ function CompressedInfoCard({ obj }) {
         gsap.to(objRef.current, {
             opacity: 0,
             duration: 0.5,
-            onComplete: () => setTimeout(()=>navigate(`/portfolio/${obj.name}`), 1000)
+            onComplete: () => setTimeout(() => navigate(`/portfolio/${keyName}`), 1000)
         })
     }
-
-    const [expanded, setExpanded] = useState(false);
 
     return (
         <div className={`info-card ${isInCenter && 'center'}`} key={obj.name} ref={objRef}>
             <div className='row'>
                 <div className='info-card-title'>
-                    <h2>{obj.name}</h2>
+                    <button onClick={changeWebPage}><h2>{obj.name}</h2></button>
                     <p>{obj.short}</p>
                 </div>
                 <div className='info-card-description'>
-                    <h3>Description</h3>
-                    <p>{obj.description}</p>
-                    {/* Here I would put the links to GitHub and such*/}
-                    <ButtonList obj={obj}/>
+                    <div>
+                        <h3>Description</h3>
+                        <p>{obj.description}</p>
+                    </div>
+                    <ButtonList obj={obj} />
                 </div>
             </div>
             <div className='accordion-content'>
@@ -107,14 +115,10 @@ function CompressedInfoCard({ obj }) {
     )
 }
 
-function ButtonList({obj}) {
-    const PDFKeys = ["Scientific Transcript"]
+export function ButtonList({ obj }) {
     if ("links" in obj) {
-        console.log("Links found!")
-        console.log(Object.keys(obj.links));
         const btnList = Object.keys(obj.links).map((key) => {
-            console.log(obj.links[key]);
-            return <a className='button-content' target="_blank" href={obj.links[key]}>{key}</a>
+            return <a className='button-content' target="_blank" href={obj.links[key]} key={obj.links[key]}>{key}</a>
         })
         return <div className='button-list'>{btnList}</div>
     } else {
@@ -125,7 +129,7 @@ function ButtonList({obj}) {
 function InfoCards() {
     const allInfoCards = Object.keys(portfolioInfo).map((key) => {
         const obj = portfolioInfo[key];
-        return <CompressedInfoCard obj={obj} key={key} />
+        return <CompressedInfoCard obj={obj} key={key} keyName={key} />
     })
 
     return (
@@ -143,13 +147,13 @@ function NavBar() {
 
     return (
         <div className={`navbar ${fullScreenNav && 'active'}`}>
-            <a href='/portfolio'>
-            <h2>
-                ESTEBAN ROMERO
-            </h2></a>
+            <Link to='/portfolio'>
+                <h2>
+                    ESTEBAN ROMERO
+                </h2></Link>
             <div className={`navigation ${fullScreenNav && 'active'}`}>
-                <a href='/Docs/EstebanRomeroCV.pdf' target='_blank'>CV</a>
-                <a href='/portfolio/about'>Me</a>
+                <a href='/esromerog/Docs/EstebanRomeroCV.pdf' target='_blank'>CV</a>
+                <Link to='/portfolio/about'>Me</Link>
                 <a href='https://github.com/esromerog' target='_blank'>GitHub</a>
             </div>
             <a className='icon material-symbols-outlined' onClick={() => setFullScreenNav(!fullScreenNav)}>{fullScreenNav ? "expand_less" : "more_vert"}</a>

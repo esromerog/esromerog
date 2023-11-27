@@ -113,7 +113,13 @@ export default function Tower() {
                 cameraTargetPercentage = tubePerc.percent;
             }
         });
+        tl.fromTo(".begin", {
+            opacity: 0,
+        }, { opacity: 1 }, "<")
 
+        tl.fromTo(".background-layer", {
+            opacity: 0,
+        }, { opacity: 0.5 }, "<")
 
 
         let onWindowResize = () => {

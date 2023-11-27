@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import { Route, Routes } from 'react-router';
 import React from 'react';
 import IntroScreen from './Components/intro';

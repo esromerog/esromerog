@@ -24,9 +24,11 @@
         "name": "Beat Motion",
         "short": "HCI · Music Production · Motion tracking",
         "description": "An interface between the body and sound. A Kinect-based motion tracking app for the body's motino to send MIDI signals.",
+        "full_description": "Beat Motion is a MIDI controller for music production built using a Kinect. It allows the user to control knobs using his/her left arm and to send notes with a 2x3 grid on the right hand.",
         "role": "Lead programmer",
         "links": {
-            "Video": "https://youtu.be/j5Xr8TlIX_A"
+            "Video": "https://youtu.be/j5Xr8TlIX_A",
+            "GitHub": "https://github.com/esromerog/BeatMotion"
         }
     },
     "waterfall": {
