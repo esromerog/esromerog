@@ -96,13 +96,14 @@ function CompressedInfoCard({ obj, keyName }) {
                 <div className='info-card-title'>
                     <button onClick={changeWebPage}><h2>{obj.name}</h2></button>
                     <p>{obj.short}</p>
+                    {isInCenter&&<a className='more' onClick={changeWebPage}><span className='material-symbols-outlined'>expand_content</span></a>}
                 </div>
                 <div className='info-card-description'>
                     <div>
                         <h3>Description</h3>
                         <p>{obj.description}</p>
                     </div>
-                    <ButtonList obj={obj} />
+                    <ButtonList obj={obj} isMain={true} changeWebPage={changeWebPage}/>
                 </div>
             </div>
             <div className='accordion-content'>
@@ -115,12 +116,12 @@ function CompressedInfoCard({ obj, keyName }) {
     )
 }
 
-export function ButtonList({ obj }) {
+export function ButtonList({ obj, isMain, changeWebPage }) {
     if ("links" in obj) {
         const btnList = Object.keys(obj.links).map((key) => {
             return <a className='button-content' target="_blank" href={obj.links[key]} key={obj.links[key]}>{key}</a>
         })
-        return <div className='button-list'>{btnList}</div>
+        return <div className='button-list'>{btnList}{isMain&&<a className='button-content' onClick={changeWebPage}>More</a>}</div>
     } else {
         return null
     }
@@ -152,6 +153,7 @@ function NavBar() {
                     ESTEBAN ROMERO
                 </h2></Link>
             <div className={`navigation ${fullScreenNav && 'active'}`}>
+                <Link to="/portfolio">Home</Link>
                 <a href='/esromerog/Docs/EstebanRomeroCV.pdf' target='_blank'>CV</a>
                 <Link to='/portfolio/about'>Me</Link>
                 <a href='https://github.com/esromerog' target='_blank'>GitHub</a>

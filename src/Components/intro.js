@@ -150,7 +150,7 @@ function StartScreen() {
                 <div className="intro-div">
                     <h1 className="initial-header" ref={header}>LOADING</h1>
                     <p>Welcome to my portfolio website.</p>
-                    <button type="button" className="fade-in btn-start material-symbols-outlined" ref={playButtonRef}>{!isPlaying ? "volume_up" : "volume_off"}</button>
+                    <button type="button" className="fade-in btn-start material-symbols-outlined" ref={playButtonRef}>{isPlaying ? "volume_up" : "volume_off"}</button>
                     <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8.18 133.1" width={10} className="mt" style={{opacity: 0}}><path d="M 0 -132 L 0 0" id="path"></path><line x1="4.09" x2="4.09" y2="132.01" className="cls-1" /><polygon points="0 128.7 .73 128.02 4.09 131.63 7.45 128.02 8.18 128.7 4.09 133.1 0 128.7" className="cls-2" /></svg>
                     <h3 className={`reveal ${show && "show"}`}>Scroll Down</h3>
                 </div>
