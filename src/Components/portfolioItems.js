@@ -319,6 +319,7 @@ export function AThousandWordSpeller() {
         loop={true}
         src="/esromerog/images/thousand-word-speller/video.mov"
         muted={true}
+        playsInline={true}
       />
       <div className="expanded no-margin">
         <div className="initial-intro">
@@ -622,6 +623,7 @@ export function BeatMotion() {
         loop={true}
         muted={true}
         src="/esromerog/images/beat-motion/video.mp4"
+        playsInline={true}
       />
       <div className="expanded no-margin">
         <div className="initial-intro">

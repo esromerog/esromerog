@@ -190,6 +190,7 @@ canvas {
   margin: 0;
 }
 
+
 .intro-div button {
   border-radius: 4rem;
   border: 1px solid #F2EBE8;
@@ -574,7 +575,15 @@ a:active {
 @media (max-width: 600px) {
 
   .refs {
-    max-width: 200px !important;
+    max-width: 300px !important;
+  }
+
+  .icon {
+    color: #414141;
+  }
+
+  .icon::before, .icon:enabled, .icon:hover, .icon:active {
+    color: #414141;
   }
 
   .spacer {
@@ -686,8 +695,8 @@ a:active {
   .navbar .icon {
     display: block;
     position: fixed;
-    top: 14px;
-    right: 10px;
+    top: 15px;
+    right: 6px;
   }
 
   .split-layout {
@@ -729,7 +738,6 @@ a:active {
   }
 
 }
-
 
 .expanded {
   margin-top: 0;
@@ -828,6 +836,10 @@ a:active {
 }
 
 .next-element button:hover {
+  color: #414141;
+}
+
+.next-element button {
   color: #414141;
 }
 
