@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import P5Wrapper from "./sketch";
 import Tower from "./towerAnimation";
-import { Link, useParams } from 'react-router-dom';
 import gsap from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin"
 import { useNavigate } from "react-router-dom";
@@ -51,7 +50,7 @@ async function ScrambleLetters(header) {
             text = text.join('');
             header.innerText = text;
 
-            if (text == title) {
+            if (text === title) {
                 clearInterval(i);
             }
 
@@ -75,28 +74,6 @@ function StartScreen() {
     useEffect(() => {
         document.body.style.overflowY = "hidden";
         document.body.style.backgroundColor = "black";
-
-        const xTo = gsap.quickTo(playButtonRef.current, "x", { duration: 1, ease: "elastic.out(1, 0.3)" })
-        const yTo = gsap.quickTo(playButtonRef.current, "y", { duration: 1, ease: "elastic.out(1, 0.3)" })
-
-        const mouseMove = (e) => {
-            const { clientX, clientY } = e;
-            const { height, width, left, top } = playButtonRef.current.getBoundingClientRect();
-            const x = clientX - (left + width / 2)
-            const y = clientY - (top + height / 2)
-            xTo(x);
-            yTo(y)
-        }
-
-        const mouseLeave = (e) => {
-            gsap.to(playButtonRef.current, { x: 0, duration: 1 })
-            gsap.to(playButtonRef.current, { y: 0, duration: 1 })
-            xTo(0);
-            yTo(0)
-        }
-
-        playButtonRef.current.addEventListener("mousemove", mouseMove)
-        playButtonRef.current.addEventListener("mouseleave", mouseLeave)
 
         ScrambleLetters(header.current);
 
@@ -130,13 +107,7 @@ function StartScreen() {
             },
             onComplete: () => setShow(true)
         }, "<")
-
-        return () => {
-            if (playButtonRef.current != null) {
-                playButtonRef.current.removeEventListener("mousemove", mouseMove)
-                playButtonRef.current.removeEventListener("mouseleave", mouseLeave)
-            }
-        }
+        
     }, [])
 
 

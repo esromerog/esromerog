@@ -3,7 +3,7 @@ import portfolioInfo from '../portfolio_info.json'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
-import { Routes, Route, useNavigate, Link, useParams } from 'react-router-dom';
+import { Routes, Route, useNavigate, Link } from 'react-router-dom';
 import Me from './me'
 import { MyndMusic, AThousandWordSpeller, Waterfall, BeatMotion, QuantifiedSelf, MutualWaveMachine } from './portfolioItems'
 
@@ -69,7 +69,6 @@ function CompressedInfoCard({ obj, keyName }) {
     const navigate = useNavigate();
 
     function changeWebPage() {
-        const y = (window.innerHeight - objRef.current.offsetHeight) / 2;
         gsap.to(window, {
             scrollTo: {
                 y: objRef.current,
@@ -96,7 +95,7 @@ function CompressedInfoCard({ obj, keyName }) {
                 <div className='info-card-title'>
                     <button onClick={changeWebPage}><h2>{obj.name}</h2></button>
                     <p>{obj.short}</p>
-                    {isInCenter&&<a className='more' onClick={changeWebPage}><span className='material-symbols-outlined'>expand_content</span></a>}
+                    {isInCenter&&<button className='more' onClick={changeWebPage}><span className='material-symbols-outlined'>expand_content</span></button>}
                 </div>
                 <div className='info-card-description'>
                     <div>
@@ -119,9 +118,9 @@ function CompressedInfoCard({ obj, keyName }) {
 export function ButtonList({ obj, isMain, changeWebPage }) {
     if ("links" in obj) {
         const btnList = Object.keys(obj.links).map((key) => {
-            return <a className='button-content' target="_blank" href={obj.links[key]} key={obj.links[key]}>{key}</a>
+            return <a className='button-content' target="_blank" rel="noopener noreferrer" href={obj.links[key]} key={obj.links[key]}>{key}</a>
         })
-        return <div className='button-list'>{btnList}{isMain&&<a className='button-content' onClick={changeWebPage}>More</a>}</div>
+        return <div className='button-list'>{btnList}{isMain&&<button className='button-content' onClick={changeWebPage}>More</button>}</div>
     } else {
         return null
     }
@@ -154,11 +153,11 @@ function NavBar() {
                 </h2></Link>
             <div className={`navigation ${fullScreenNav && 'active'}`}>
                 <Link to="/portfolio">Home</Link>
-                <a href='/esromerog/Docs/EstebanRomeroCV.pdf' target='_blank'>CV</a>
+                <a href='/esromerog/Docs/EstebanRomeroCV.pdf' target='_blank' rel="noopener noreferrer">CV</a>
                 <Link to='/portfolio/about'>Me</Link>
-                <a href='https://github.com/esromerog' target='_blank'>GitHub</a>
+                <a href='https://github.com/esromerog' target='_blank' rel="noopener noreferrer">GitHub</a>
             </div>
-            <a className='icon material-symbols-outlined' onClick={() => setFullScreenNav(!fullScreenNav)}>{fullScreenNav ? "expand_less" : "more_vert"}</a>
+            <button className='icon material-symbols-outlined' onClick={() => setFullScreenNav(!fullScreenNav)}>{fullScreenNav ? "expand_less" : "more_vert"}</button>
         </div>
     )
 }

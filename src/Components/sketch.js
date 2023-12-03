@@ -83,6 +83,7 @@ export default function P5Wrapper({isPlaying, playButtonRef, setIsPlaying}) {
       sketch.noLoop();
       sketch.remove();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   //  className="h-100"
