@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/esromerog/static/css/main.7c0ee418.css",
+    "main.css": "/esromerog/static/css/main.677390be.css",
     "main.js": "/esromerog/static/js/main.819b080d.js",
     "static/media/me.png": "/esromerog/static/media/me.507136b33467d6cfa984.png",
     "static/media/gris.mp3": "/esromerog/static/media/gris.8f415afd59de1384fcad.mp3",
@@ -8,11 +8,11 @@
     "static/media/instagram.svg": "/esromerog/static/media/instagram.cf4d9d1b9c02dcd62c162f8549651013.svg",
     "static/media/linkedin.svg": "/esromerog/static/media/linkedin.593049ac2e02388e730967d1afa03ab0.svg",
     "index.html": "/esromerog/index.html",
-    "main.7c0ee418.css.map": "/esromerog/static/css/main.7c0ee418.css.map",
+    "main.677390be.css.map": "/esromerog/static/css/main.677390be.css.map",
     "main.819b080d.js.map": "/esromerog/static/js/main.819b080d.js.map"
   },
   "entrypoints": [
-    "static/css/main.7c0ee418.css",
+    "static/css/main.677390be.css",
     "static/js/main.819b080d.js"
   ]
 }
