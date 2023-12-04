@@ -17,4 +17,7 @@ It was entirely built by myself from scratch using:
 
 Feel free to explore or dive directly into my projects by exploring the rest of my GitHub or going [directly to the portfolio](https://esromerog.github.io/esromerog/#/portfolio).
 
-The [music](https://www.youtube.com/watch?v=InQk79Ll9u4) was composed by [Berlinist](https://www.berlinistmusic.com) as the original soundtrack for Gris.
+
+The music is used in this portfolio with permission from the author. You can listen to the full soundtrack:
+
+[Berlinist - Gris Pt.2 (© Berlinist / Nomada Studio)](https://www.youtube.com/watch?v=InQk79Ll9u4)

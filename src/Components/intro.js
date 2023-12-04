@@ -119,6 +119,7 @@ function StartScreen() {
             </div>
             <div className="large-top" id="first-part">
                 <div className="intro-div">
+                    {isPlaying && <p className="music-author">Music: Berlinist - Gris Pt.2 <a href="https://www.berlinistmusic.com/" target="_blank" rel="noopener noreferrer">(© Berlinist / Nomada Studio)</a></p>}
                     <h1 className="initial-header" ref={header}>LOADING</h1>
                     <p>Welcome to my portfolio website.</p>
                     <button type="button" className="fade-in btn-start material-symbols-outlined" ref={playButtonRef}>{isPlaying ? "volume_up" : "volume_off"}</button>
@@ -178,10 +179,12 @@ function TowerScroll() {
                     </div>
                 </div>
                 <div className="h-100 center-content">
+                    <div></div>
                     <div>
                         <p>Now, I invite you to explore, traveler from the stars.</p>
-                        <button className="begin" onClick={enterPortfolio}>Enter</button>
+                        <button className="begin" onClick={enterPortfolio}>Enter</button>    
                     </div>
+                    
                     <div className="background-layer" ></div>
                     <div className="main-background front" style={{display: "none", opacity: 0}}></div>
                     <div className="style-overlay front" style={{display: "none", opacity: 0}}></div>

@@ -112,10 +112,10 @@ p {
   transition: background-color 2s ease-in-out;
 }
 
-.begin{
+.begin {
   border-radius: 4rem;
   border: 1px solid #F2EBE8;
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
   color: #F2EBE8;
   width: 4rem;
   height: 4rem;
@@ -194,7 +194,7 @@ canvas {
 .intro-div button {
   border-radius: 4rem;
   border: 1px solid #F2EBE8;
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
   color: #F2EBE8;
   width: 4rem;
   height: 4rem;
@@ -210,9 +210,9 @@ canvas {
 }
 
 .cls-1 {
-  fill:none;
-  stroke:#f2ebe8;
-  stroke-miterlimit:10;
+  fill: none;
+  stroke: #f2ebe8;
+  stroke-miterlimit: 10;
   stroke-width: 1px;
 }
 
@@ -573,8 +573,7 @@ a:active {
 }
 
 @media (max-width: 600px) {
-
-  .refs {
+  .refs {
     max-width: 300px !important;
   }
 
@@ -582,7 +581,10 @@ a:active {
     color: #414141;
   }
 
-  .icon::before, .icon:enabled, .icon:hover, .icon:active {
+  .icon::before,
+  .icon:enabled,
+  .icon:hover,
+  .icon:active {
     color: #414141;
   }
 
@@ -634,7 +636,7 @@ a:active {
     flex-direction: column;
     align-items: center;
   }
-  
+
 
   .info-card .row {
     min-width: 100%;
@@ -750,6 +752,12 @@ a:active {
   backdrop-filter: blur(6px);
 }
 
+.justify-content-between {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .expanded p {
   line-height: 1.25rem;
 }
@@ -850,6 +858,28 @@ a:active {
   padding: 0;
 }
 
+.btn-start {
+  text-align: center;
+  padding: 0;
+}
+
+.music-author {
+  color: #838383;
+  position: fixed;
+  top: 0;
+  opacity: 0;
+  animation: fades 4s linear;
+}
+
+.music-author a {
+  color: #535353;
+}
+
+@keyframes fades {
+  0%,100% { opacity: 0 }
+  40% { opacity: 1 }
+  80% {opacity: 1}
+}
 
 .visually-hidden {
   display: none;
