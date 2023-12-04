@@ -151,11 +151,11 @@ export function MyndMusic() {
                 I wanted to make this project an exploration of different
                 environments within our minds. The experience walks the subject
                 through changing environments that are meant to reflect
-                different emotional states, from the peace of being connected to
+                various emotional states, from the peace of being connected to
                 nature, to the dread of anxiety and isolation. Meanwhile, the
                 EEG analysis is based on emotional models of valence and arousal{" "}
-                <span id="barret">[1]</span> measured with consumer-grade devices{" "}
-                <span id="cannard">[2]</span>.
+                <span id="barret">[1]</span> measured with consumer-grade
+                devices <span id="cannard">[2]</span>.
               </p>
               <Tooltip
                 className="refs"
@@ -352,19 +352,19 @@ export function AThousandWordSpeller() {
               <h3>Background</h3>
               <p>
                 This project aimed to find a simple way to communicate mental
-                imagery directly from a BCI without requiring the user to have
-                any artistic skill or even motor input. Considering that the
-                P300 protocol has been widely studied and optimized{" "}
-                <span id="pan2022">[1]</span>, we used a speller provided by g.Tec for
-                their BR41N.io hackathon and experimentally validated{" "}
-                <span id="rusanu2023">[2]</span>.
+                imagery directly from a BCI without requiring any skill or motor
+                input. Considering that the P300 protocol has been widely
+                studied and optimized <span id="pan2022">[1]</span>, we used an
+                experimentally validated speller{" "}
+                <span id="rusanu2023">[2]</span> provided by g.Tec for their
+                BR41N.io hackathon.
               </p>
               <p>
                 As a future line of research, we would like to look into the use
-                these types of systems for patients with aphasia [
-                <span id="sacchett2002">3</span>, <span id="kleih2016">4</span>], while also
-                optimizing the system to adapt its image selection in real-time
-                to create more specific artworks.
+                of this system for patients with aphasia [
+                <span id="sacchett2002">3</span>, <span id="kleih2016">4</span>
+                ], while also optimizing it to adapt its image selection
+                in real-time for more specific artworks.
               </p>
               {Object.keys(refs).map((key) => (
                 <Tooltip
@@ -516,7 +516,7 @@ export function Waterfall() {
         sham-controlled study. <i>Frontiers in Human Neuroscience, 16,</i>{" "}
         952261.{" "}
         <a
-          href="https://doi:10.3389/fnhum.2022.952261"
+          href="https://doi.org/10.3389/fnhum.2022.952261"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -550,15 +550,15 @@ export function Waterfall() {
               </p>
               <h3>Background</h3>
               <p>
-                Recognizing the positive potential of video games to improve
+                Recognizing the potential of video games to improve
                 motivation, engagement, cognition, and emotion [
-                <span id="granic2014">1</span>, <span id="franco2016">2</span>], this
-                project was developed as a neurofeedback system with the
-                structure of a traditional videogame [<span id="marzbani2016">3</span>
-                , <span id="egner2004">4</span>]. Additionally, our approach packaged
-                the experience within a VR world to make it more immersive;
-                aiming to increase neurofeedback performance{" "}
-                <span id="berger2022">[5]</span>.
+                <span id="granic2014">1</span>, <span id="franco2016">2</span>],
+                this project was developed as a neurofeedback system with the
+                structure of a traditional videogame [
+                <span id="marzbani2016">3</span>, <span id="egner2004">4</span>
+                ]. Additionally, our approach packaged the experience within a
+                VR world to make it more immersive; aiming to increase
+                neurofeedback performance <span id="berger2022">[5]</span>.
               </p>
               {Object.keys(refs).map((key) => (
                 <Tooltip
@@ -631,7 +631,7 @@ export function BeatMotion() {
           <h3>Description</h3>
           <p>
             Beat Motion is a direct interface between the movement of the body
-            and sound.
+            and sound. It used consumer-grade hardware (Kinect) to output MIDI notes that can be used in any audio software.
           </p>
         </div>
         <div className="split-layout">
@@ -739,8 +739,8 @@ export function MutualWaveMachine() {
           <h3>Description</h3>
           <p>
             Implementation of the Mutual Wave Machine project, by Suzanne
-            Dikker, on my college campus with the help of student club,
-            Wavesense.
+            Dikker, on my college campus with the help of my student club,
+            <i>wavesense</i>.
           </p>
           <p>
             It's an interactive experience that seeks to explore the connection
