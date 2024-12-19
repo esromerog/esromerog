@@ -1,4 +1,14 @@
 {
+    "quantified-self": {
+        "name": "You: Quantified",
+        "short": "EEG · LSL · Creative Coding",
+        "description": "An educational platform to connect data to graphic and interactive experiences",
+        "role": "Front-end developer · UX Designer · Signal acquisition/preprocessing",
+        "links": {
+            "GitHub": "https://github.com/mindhiveproject/You-Quantified",
+            "Website": "https://youquantified.com"
+        }
+    },
     "mynd_music": {
         "name": "Mynd Music",
         "short": "EEG · VR · Adaptive Environments",
@@ -47,16 +57,6 @@
         "role": "3D Designer",
         "links": {
             "Original Project": "http://www.suzannedikker.net/mutualwavemachine"
-        }
-    },
-    "quantified-self": {
-        "name": "You: Quantified Self",
-        "short": "EEG · LSL · Creative Coding · Front-end development",
-        "description": "An educational-oriented website to easily connect physiological data to customizable creative visualization.",
-        "role": "Front-end developer · UX Designer · Signal acquisition/preprocessing",
-        "links": {
-            "GitHub": "https://github.com/esromerog/QuantifiedSelf",
-            "Website": "https://creative-quantified-self.netlify.app/devices"
         }
     }
 }
