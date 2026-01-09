@@ -1,9 +1,14 @@
+"use client";
+
 import React, { useState, useRef, useEffect } from "react";
-import P5Wrapper from "./sketch";
+import { P5Wrapper } from "../../utility/p5Wrapper/p5Wrapper";
+import { starsSketch } from "./stars";
 import Tower from "./towerAnimation";
 import gsap from "gsap";
-import { MotionPathPlugin } from "gsap/MotionPathPlugin"
-import { useNavigate } from "react-router-dom";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+import { useRouter } from "next/navigation";
+
+
 
 gsap.registerPlugin(MotionPathPlugin);
 
@@ -115,7 +120,7 @@ function StartScreen() {
         <div className="margin-0">
             <div className="blocking"></div>
             <div className="position-absolute">
-                <P5Wrapper isPlaying={isPlayingRef} setIsPlaying={setIsPlaying} playButtonRef={playButtonRef} />
+                <P5Wrapper sketch={starsSketch} isPlaying={isPlayingRef} setIsPlaying={setIsPlaying} playButtonRef={playButtonRef} />
             </div>
             <div className="large-top" id="first-part">
                 <div className="intro-div">
@@ -140,7 +145,7 @@ function StartScreen() {
 
 function TowerScroll() {
 
-    const navigate = useNavigate();
+    const router = useRouter();
 
     function enterPortfolio() {
 
@@ -148,7 +153,7 @@ function TowerScroll() {
             duration: 1.5,
             opacity: 1,
             ease: "power3.in",
-            onComplete: () => navigate("/portfolio")
+            onComplete: () => router.push("/projects")
         })
         gsap.set(".main-background", {
             display: "block"
@@ -160,7 +165,7 @@ function TowerScroll() {
             duration: 1.5,
             opacity: 1,
             ease: "power3.in",
-            onComplete: () => setTimeout(()=>navigate("/portfolio"), 500)
+            onComplete: () => setTimeout(()=>router.push("/projects"), 500)
         })
         gsap.set(".background-layer", {
             opacity: 0,

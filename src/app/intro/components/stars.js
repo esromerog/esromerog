@@ -1,11 +1,9 @@
-import p5 from "p5"
-import song from '../assets/gris.mp3'
-import React, { useEffect } from "react"
+"use client";
 
-window.p5 = p5
-require('p5/lib/addons/p5.sound')
+// In Next.js, use public folder path for assets
+const song = '/sounds/gris.mp3';
 
-const s = (p, playButtonRef, isPlaying, setIsPlaying, mute) => {
+export const starsSketch = (p, playButtonRef, isPlaying, setIsPlaying) => {
   var mysound;
   var fft, amps;
 
@@ -22,8 +20,8 @@ const s = (p, playButtonRef, isPlaying, setIsPlaying, mute) => {
   p.setup = () => {
     p.createCanvas(p.windowWidth, p.windowHeight*2);
     p.frameRate(30);
-    fft = new p5.FFT(0.8, 64);
-    amps = new p5.Amplitude();
+    fft = new window.p5.FFT(0.8, 64);
+    amps = new window.p5.Amplitude();
   }
 
   playButtonRef.current.onclick = function() {
@@ -42,7 +40,7 @@ const s = (p, playButtonRef, isPlaying, setIsPlaying, mute) => {
     p.background(0);
 
     let spectrum = fft.analyze();
-    let stepx = p.round(p.width / 64); // Adjust this step value
+    let stepx = p.round(p.width / 64);
     let stepy = p.round(p.height / 64);
 
     let level = amps.getLevel();
@@ -55,9 +53,6 @@ const s = (p, playButtonRef, isPlaying, setIsPlaying, mute) => {
       for (let y = 0; y < p.height; y += stepy) {
         const yamp = spectrum[specy] / 255 || 0;
         specy = specy + 1;
-        //const offx = (noise(x * 0.01 + seed, y * 0.01 + seed) + noise(x * 0.01 + seed * 3, y * 0.01 + seed * 3)) * 200 - 200;
-        //point(x+offx+spectrum[x]/255*100, y+offx+spectrum[y]/255*100);
-        //point(map(x + offx, 0, width, 100, 300) + xamp * 100, map(y + offx, 0, height, 100, 300) + yamp * 100)
         p.stroke(xamp * 255 + 100, level * 255 + 100, yamp * 255 + 100);
 
         const offx = (p.noise(x * 0.01 + seed + xamp * 0.2, y * 0.01 + seed + yamp * 0.2) + p.noise(x * 0.01 + seed * 4 + xamp * 4, y * 0.01 + seed * 4 + yamp * 4)) * 200 - 200;
@@ -70,24 +65,4 @@ const s = (p, playButtonRef, isPlaying, setIsPlaying, mute) => {
   }
 }
 
-export default function P5Wrapper({isPlaying, playButtonRef, setIsPlaying}) {
 
-  const canvasRef = React.useRef();
-
-  useEffect(() => {
-
-    const sketch = new p5(p=>s(p, playButtonRef, isPlaying, setIsPlaying), canvasRef.current);
-
-    // Super important cleanup function
-    return () => {
-      sketch.noLoop();
-      sketch.remove();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  //  className="h-100"
-  return (
-    <div ref={canvasRef} />
-  )
-};

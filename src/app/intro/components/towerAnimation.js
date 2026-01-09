@@ -1,11 +1,14 @@
+"use client";
+
 import * as THREE from "three";
 // import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
-
-import tower from '../assets/tower.glb'
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useEffect, useRef } from "react";
+
+// Use public folder path for assets in Next.js
+const tower = '/other/tower.glb';
 
 gsap.registerPlugin(ScrollTrigger);
 
