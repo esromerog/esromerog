@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { P5Wrapper } from "../../../components/p5Wrapper/p5Wrapper";
+import { P5Wrapper } from "../../../_components/p5Wrapper/p5Wrapper";
 import { starsSketch } from "./stars";
 import Tower from "./towerAnimation";
 import gsap from "gsap";

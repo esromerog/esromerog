@@ -32,6 +32,13 @@ function NavBar() {
         >
           GitHub
         </a>
+        <a
+          href="https://immortaicarus.itch.io"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Games
+        </a>
       </div>
       <button
         className="icon material-symbols-outlined"

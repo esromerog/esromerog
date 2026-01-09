@@ -17,7 +17,7 @@
         "links": {
             "GitHub": "https://github.com/esromerog/Mynd-Music",
             "3D Recording": "https://www.youtube.com/watch?v=Glc25Y9Vxaw",
-            "Transcript": "./Docs/Mynd.pdf"
+            "Transcript": "/pdfs/Mynd.pdf"
         }
     },
     "thousand-word-speller": {
@@ -26,7 +26,7 @@
         "description": "Communicating mental imagery through a P300-based BCI with the help of generative AI.",
         "role": "Programmer · Research",
         "links": {
-            "Scientific Transcript": "./Docs/BCIAwardSubmission.pdf",
+            "Scientific Transcript": "/pdfs/BCIAwardSubmission.pdf",
             "Video": "https://youtu.be/9F4zXUAnIdI"
         }
     },

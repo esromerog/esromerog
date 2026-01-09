@@ -10,7 +10,6 @@ import { useRouter } from "next/navigation";
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
 
-
 export function ButtonList({ obj, isMain, changeWebPage }) {
   if ("links" in obj) {
     const btnList = Object.keys(obj.links).map((key) => {
@@ -57,6 +56,7 @@ function CompressedInfoCard({ obj, keyName }) {
   }
 
   useEffect(() => {
+    /*
     ScrollTrigger.observe({
       target: objRef.current,
       type: "wheel,scroll",
@@ -67,30 +67,39 @@ function CompressedInfoCard({ obj, keyName }) {
       type: "touch",
       onChangeY: getPos,
     });
-    getPos();
+    getPos();*/
   }, []);
 
   const router = useRouter();
 
   function changeWebPage() {
-    gsap.to(window, {
+    if (!objRef.current) return;
+    const element = objRef.current;
+    const rect = element.getBoundingClientRect();
+    const tl = gsap.timeline();
+    tl.to(window, {
       scrollTo: {
-        y: objRef.current,
+        y: element,
         offsetY: 0,
       },
       duration: 0.5,
-    });
-    gsap.to(objRef.current, {
-      height: "100vh",
-      pin: true,
-      duration: 0.5,
-    });
-    gsap.to(objRef.current, {
-      opacity: 0,
-      duration: 0.5,
-      onComplete: () =>
-        setTimeout(() => router.push(`/projects/${keyName}`), 1000),
-    });
+    })
+      .set(element, {
+        zIndex: 1000,
+      })
+      .to(element, {
+        top: 0,
+        left: 0,
+        width: "100vw",
+        height: "100vh",
+        duration: 0.3,
+      })
+      .to(element, {
+        opacity: 0,
+        duration: 0.3,
+        onComplete: () =>
+          setTimeout(() => router.push(`/projects/${keyName}`), 500),
+      });
   }
 
   return (

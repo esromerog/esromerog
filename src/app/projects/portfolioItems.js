@@ -6,13 +6,27 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { useRouter } from "next/navigation";
-import Carousel from "react-bootstrap/Carousel";
+import Slider from "react-slick";
 import { ButtonList } from "./page";
 import { Tooltip } from "react-tooltip";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
 
+function Carousel({ children }) {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    fade: false,
+  };
+
+  return <Slider {...settings}>{children}</Slider>;
+}
 
 function NextElement({ currSelection }) {
   function getNextInfo(currSelection) {
@@ -151,10 +165,10 @@ export function MyndMusic() {
               <p>
                 I wanted to make this project an exploration of different
                 environments within our minds. The experience walks the subject
-                through changing environments that are meant to reflect
-                various emotional states, from the peace of being connected to
-                nature, to the dread of anxiety and isolation. Meanwhile, the
-                EEG analysis is based on emotional models of valence and arousal{" "}
+                through changing environments that are meant to reflect various
+                emotional states, from the peace of being connected to nature,
+                to the dread of anxiety and isolation. Meanwhile, the EEG
+                analysis is based on emotional models of valence and arousal{" "}
                 <span id="barret">[1]</span> measured with consumer-grade
                 devices <span id="cannard">[2]</span>.
               </p>
@@ -179,46 +193,39 @@ export function MyndMusic() {
           </div>
           <div className="image-carousel">
             <img
-              src="/esromerog/images/mynd_music/presentation.jpg"
+              src="/images/projects/mynd_music/presentation.jpg"
               alt="Equipment used for the project displayed at INC Monterrey."
             ></img>
-            <Carousel fade touch>
-              <Carousel.Item>
-                <img
-                  src="/esromerog/images/mynd_music/intro.jpg"
-                  alt="First scene in VR"
-                ></img>
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  src="/esromerog/images/mynd_music/forest.jpg"
-                  alt="Forest scene in VR"
-                ></img>
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  src="/esromerog/images/mynd_music/coffee.jpg"
-                  alt="VR café"
-                ></img>
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  src="/esromerog/images/mynd_music/coffee2.jpg"
-                  alt="VR café transition"
-                ></img>
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  src="/esromerog/images/mynd_music/dessert.jpg"
-                  alt="Desert scene in VR"
-                ></img>
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  src="/esromerog/images/mynd_music/end.jpg"
-                  alt="Ending of the experience"
-                ></img>
-              </Carousel.Item>
+            <Carousel>
+              <img
+                src="/images/projects/mynd_music/intro.jpg"
+                alt="First scene in VR"
+              ></img>
+
+              <img
+                src="/images/projects/mynd_music/forest.jpg"
+                alt="Forest scene in VR"
+              ></img>
+
+              <img
+                src="/images/projects/mynd_music/coffee.jpg"
+                alt="VR café"
+              ></img>
+
+              <img
+                src="/images/projects/mynd_music/coffee2.jpg"
+                alt="VR café transition"
+              ></img>
+
+              <img
+                src="/images/projects/mynd_music/dessert.jpg"
+                alt="Desert scene in VR"
+              ></img>
+
+              <img
+                src="/images/projects/mynd_music/end.jpg"
+                alt="Ending of the experience"
+              ></img>
             </Carousel>
           </div>
         </div>
@@ -318,7 +325,7 @@ export function AThousandWordSpeller() {
         className="top-image"
         autoPlay={true}
         loop={true}
-        src="/esromerog/images/thousand-word-speller/video.mov"
+        src="/images/projects/thousand-word-speller/video.mov"
         muted={true}
         playsInline={true}
       />
@@ -364,8 +371,8 @@ export function AThousandWordSpeller() {
                 As a future line of research, we would like to look into the use
                 of this system for patients with aphasia [
                 <span id="sacchett2002">3</span>, <span id="kleih2016">4</span>
-                ], while also optimizing it to adapt its image selection
-                in real-time for more specific artworks.
+                ], while also optimizing it to adapt its image selection in
+                real-time for more specific artworks.
               </p>
               {Object.keys(refs).map((key) => (
                 <Tooltip
@@ -382,47 +389,23 @@ export function AThousandWordSpeller() {
             <ButtonList obj={info} />
           </div>
           <div className="image-carousel">
-            <Carousel fade touch>
-              <Carousel.Item>
-                <img
-                  src="/esromerog/images/thousand-word-speller/dog.png"
-                  alt="Dog generated through this tool"
-                ></img>
-                <Carousel.Caption>
-                  <h3>Prompt</h3>
-                  <p>Space, dog, pixel-art</p>
-                </Carousel.Caption>
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  src="/esromerog/images/thousand-word-speller/dolphin.png"
-                  alt="Dolphin in the beach generated through this tool"
-                ></img>
-                <Carousel.Caption>
-                  <h3>Prompt</h3>
-                  <p>Dolphin, beach, sunset</p>
-                </Carousel.Caption>
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  src="/esromerog/images/thousand-word-speller/lion.png"
-                  alt="Lion generated in the tool"
-                ></img>
-                <Carousel.Caption>
-                  <h3>Prompt</h3>
-                  <p>Space, lion, digital art</p>
-                </Carousel.Caption>
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  src="/esromerog/images/thousand-word-speller/restaurant.png"
-                  alt="Futuristic restaurant generated in this tool"
-                ></img>
-                <Carousel.Caption>
-                  <h3>Prompt</h3>
-                  <p>Future, restaurant, digital art</p>
-                </Carousel.Caption>
-              </Carousel.Item>
+            <Carousel>
+              <img
+                src="/images/projects/thousand-word-speller/dog.png"
+                alt="Dog generated through this tool"
+              ></img>
+              <img
+                src="/images/projects/thousand-word-speller/dolphin.png"
+                alt="Dolphin in the beach generated through this tool"
+              ></img>
+              <img
+                src="/images/projects/thousand-word-speller/lion.png"
+                alt="Lion generated in the tool"
+              ></img>
+              <img
+                src="/images/projects/thousand-word-speller/restaurant.png"
+                alt="Futuristic restaurant generated in this tool"
+              ></img>
             </Carousel>
           </div>
         </div>
@@ -551,8 +534,8 @@ export function Waterfall() {
               </p>
               <h3>Background</h3>
               <p>
-                Recognizing the potential of video games to improve
-                motivation, engagement, cognition, and emotion [
+                Recognizing the potential of video games to improve motivation,
+                engagement, cognition, and emotion [
                 <span id="granic2014">1</span>, <span id="franco2016">2</span>],
                 this project was developed as a neurofeedback system with the
                 structure of a traditional videogame [
@@ -576,19 +559,16 @@ export function Waterfall() {
             <ButtonList obj={info} />
           </div>
           <div className="image-carousel">
-            <Carousel fade touch>
-              <Carousel.Item>
-                <img
-                  src="/esromerog/images/waterfall/process.jpg"
-                  alt="The team while working on the development"
-                ></img>
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  src="/esromerog/images/waterfall/testing.jpg"
-                  alt="Testing of the experience"
-                ></img>
-              </Carousel.Item>
+            <Carousel>
+              <img
+                src="/images/projects/waterfall/process.jpg"
+                alt="The team while working on the development"
+              ></img>
+
+              <img
+                src="/images/projects/waterfall/testing.jpg"
+                alt="Testing of the experience"
+              ></img>
             </Carousel>
           </div>
         </div>
@@ -623,7 +603,7 @@ export function BeatMotion() {
         autoPlay={true}
         loop={true}
         muted={true}
-        src="/esromerog/images/beat-motion/video.mp4"
+        src="/images/projects/beat-motion/video.mp4"
         playsInline={true}
       />
       <div className="expanded no-margin">
@@ -632,7 +612,8 @@ export function BeatMotion() {
           <h3>Description</h3>
           <p>
             Beat Motion is a direct interface between the movement of the body
-            and sound. It used consumer-grade hardware (Kinect) to output MIDI notes that can be used in any audio software.
+            and sound. It used consumer-grade hardware (Kinect) to output MIDI
+            notes that can be used in any audio software.
           </p>
         </div>
         <div className="split-layout">
@@ -654,7 +635,7 @@ export function BeatMotion() {
           </div>
           <div className="image-carousel">
             <img
-              src="/esromerog/images/beat-motion/process.jpg"
+              src="/images/projects/beat-motion/process.jpg"
               alt="The team during the work process"
             ></img>
           </div>
@@ -762,19 +743,15 @@ export function MutualWaveMachine() {
             <ButtonList obj={info} />
           </div>
           <div className="image-carousel">
-            <Carousel fade touch>
-              <Carousel.Item>
-                <img
-                  src="/esromerog/images/mutual-wave-machine/sitting.jpg"
-                  alt="Local installation of the Mutual Wave Machine"
-                ></img>
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  src="/esromerog/images/mutual-wave-machine/closeup.jpg"
-                  alt="Closeup of our version of the Mutual Wave Machine"
-                ></img>
-              </Carousel.Item>
+            <Carousel>
+              <img
+                src="/images/projects/mutual-wave-machine/sitting.jpg"
+                alt="Local installation of the Mutual Wave Machine"
+              ></img>
+              <img
+                src="/images/projects/mutual-wave-machine/closeup.jpg"
+                alt="Closeup of our version of the Mutual Wave Machine"
+              ></img>
             </Carousel>
           </div>
         </div>
