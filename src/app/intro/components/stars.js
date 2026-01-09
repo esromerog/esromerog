@@ -1,38 +1,47 @@
 "use client";
 
 // In Next.js, use public folder path for assets
-const song = '/sounds/gris.mp3';
+const song = "/sounds/gris.mp3";
 
-export const starsSketch = (p, playButtonRef, isPlaying, setIsPlaying) => {
+export const starsSketch = (
+  p,
+  parentRef,
+  { playButtonRef, isPlaying, setIsPlaying }
+) => {
   var mysound;
   var fft, amps;
 
   p.preload = () => {
-    console.log("Preloaded");
-    p.soundFormats('mp3', 'ogg');
+    p.soundFormats("mp3", "ogg");
     mysound = p.loadSound(song);
-  }
+    console.log("Preloaded");
+  };
 
   p.windowResized = () => {
-    p.resizeCanvas(p.windowWidth, p.windowHeight*2);
-  }
+    p.resizeCanvas(p.windowWidth, p.windowHeight * 2);
+  };
 
   p.setup = () => {
-    p.createCanvas(p.windowWidth, p.windowHeight*2);
+    let parentStyle = window.getComputedStyle(parentRef);
+    p.createCanvas(p.windowWidth, p.windowHeight * 2).parent(parentRef);
     p.frameRate(30);
     fft = new window.p5.FFT(0.8, 64);
     amps = new window.p5.Amplitude();
-  }
 
-  playButtonRef.current.onclick = function() {
+
+  };
+
+  console.log(playButtonRef);
+  playButtonRef.current.onclick = function () {
     if (isPlaying.current) {
-      console.log("Pausing!")
+      console.log("Pausing!");
       mysound.pause();
     } else {
+      mysound.setVolume(1.0);
       mysound.play();
     }
     setIsPlaying(!isPlaying.current);
-  }
+  };
 
   let seed = 0;
 
@@ -54,15 +63,24 @@ export const starsSketch = (p, playButtonRef, isPlaying, setIsPlaying) => {
         const yamp = spectrum[specy] / 255 || 0;
         specy = specy + 1;
         p.stroke(xamp * 255 + 100, level * 255 + 100, yamp * 255 + 100);
+        p.strokeWeight(1.5);
 
-        const offx = (p.noise(x * 0.01 + seed + xamp * 0.2, y * 0.01 + seed + yamp * 0.2) + p.noise(x * 0.01 + seed * 4 + xamp * 4, y * 0.01 + seed * 4 + yamp * 4)) * 200 - 200;
+        const offx =
+          (p.noise(x * 0.01 + seed + xamp * 0.2, y * 0.01 + seed + yamp * 0.2) +
+            p.noise(
+              x * 0.01 + seed * 4 + xamp * 4,
+              y * 0.01 + seed * 4 + yamp * 4
+            )) *
+            200 -
+          200;
 
-        p.point(p.map(x + offx, 0, p.width, 50, p.width - 50), p.map(y + offx, 0, p.height, 50, p.height - 50))
+        p.point(
+          p.map(x + offx, 0, p.width, 50, p.width - 50),
+          p.map(y + offx, 0, p.height, 50, p.height - 50)
+        );
       }
     }
 
     seed = seed + 0.003;
-  }
-}
-
-
+  };
+};

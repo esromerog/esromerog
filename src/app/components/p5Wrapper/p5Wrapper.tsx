@@ -3,6 +3,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import p5Types from "p5";
 
+declare global {
+  interface Window {
+    p5: typeof p5Types;
+  }
+}
+
 export type P5jsSketch = (
   p: p5Types,
   parentRef: P5jsContainerRef,
@@ -49,7 +55,7 @@ export const P5Wrapper: P5jsContainer = ({ sketch, ...params }) => {
         p5instance.remove();
       }
     };
-  }, [isMounted, sketch, params]);
+  }, [isMounted, sketch]);
 
   return <div ref={parentRef}></div>;
 };
