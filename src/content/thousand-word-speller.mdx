@@ -1,0 +1,53 @@
+import { defineMetadata } from "../types/projects"
+
+export const metadata = defineMetadata({
+  name: "A Thousand Word Speller",
+  tags: [{name: "EEG", show: true}, {name: "Generative AI", show: true}],
+  description:
+    "Communicating mental imagery through a P300-based BCI with the help of generative AI.",
+  role: "Programmer · Research",
+  links: [
+    {
+      url: "/pdfs/BCIAwardSubmission.pdf",
+      label: "Scientific Transcript",
+    },
+    {
+      url: "https://youtu.be/9F4zXUAnIdI",
+      label: "Video",
+    },
+  ],
+});
+
+# A Thousand-Word Speller
+
+How can we effectively convey and express the images within our minds? Especially when our means of communication, either because verbal or motor impairment, are limited.
+
+This is a P300 based speller with a board made up of images. This method uses generative image and language models to create new pictures in real-time based on the user's current selections.
+
+This project obtained second place at the Spring 2022 IEEE BR41N.io Hackathon.
+
+## Role & Tools
+
+I programmed the interface with ChatGPT and Stable Diffusion's APIs, contributed to the design of the board, and system testing.
+
+## Background
+
+This project aimed to find a simple way to communicate mental imagery directly from a BCI without requiring any skill or motor input. Considering that the P300 protocol has been widely studied and optimized [[1]](https://doi.org/10.3389/fnhum.2022.1077717), we used an experimentally validated speller [[2]](https://doi.org/10.1007/978-3-031-22375-4_68) provided by g.Tec for their BR41N.io hackathon.
+
+As a future line of research, we would like to look into the use of this system for patients with aphasia [[3]](https://doi.org/10.1006/ijhc.2002.1018), [[4]](https://doi.org/10.3389/fnhum.2016.00547), while also optimizing it to adapt its image selection in real-time for more specific artworks.
+
+## References
+
+1. Pan, J., Chen, X., Ban, N., He, J., Chen, J., & Huang, H. (2022). Advances in P300 brain-computer interface spellers: toward paradigm design and performance evaluation. *Frontiers in Human Neuroscience, 16,* 1077717. [doi:10.3389/fnhum.2022.1077717](https://doi.org/10.3389/fnhum.2022.1077717)
+2. Rușanu, O. A. (2023). A brain-computer interface-based simulation of vending machine by the integration between gtec unicorn EEG headset and LabVIEW programming environment using P300 speller and UDP communication. In *Lecture Notes in Networks and Systems. The 16th International Conference Interdisciplinarity in Engineering* (pp. 836–849). [doi:10.1007/978-3-031-22375-4_68](https://doi.org/10.1007/978-3-031-22375-4_68)
+3. Sacchett, C. (2002). Drawing in aphasia: moving towards the interactive. *International Journal of Human-Computer Studies,* 57(4), 263–277. [doi:10.1006/ijhc.2002.1018](https://doi.org/10.1006/ijhc.2002.1018)
+4. Kleih, S. C., Gottschalt, L., Teichlein, E., & Weilbach, F. X. (2016). Toward a P300 based Brain-Computer Interface for aphasia rehabilitation after stroke: Presentation of theoretical considerations and a pilot feasibility study. *Frontiers in Human Neuroscience, 10,* 547. [doi:10.3389/fnhum.2016.00547](https://doi.org/10.3389/fnhum.2016.00547)
+
+
+
+
+  <img src="/images/projects/thousand-word-speller/dog.png" alt="Dog generated through this tool" />
+  <img src="/images/projects/thousand-word-speller/dolphin.png" alt="Dolphin in the beach generated through this tool" />
+  <img src="/images/projects/thousand-word-speller/lion.png" alt="Lion generated in the tool" />
+  <img src="/images/projects/thousand-word-speller/restaurant.png" alt="Futuristic restaurant generated in this tool" />
+

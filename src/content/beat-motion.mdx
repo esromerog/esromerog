@@ -1,0 +1,30 @@
+import { defineMetadata } from "../types/projects"
+
+export const metadata = defineMetadata({
+  name: "Beat Motion",
+  tags: [{name: "Human-Computer-Interface", show: true}, {name: "Music Production", show: true}, {name: "Motion Tracking", show: true}],
+  description:
+    "An interface between the body and sound. A Kinect-based motion tracking app for the body's motion to send MIDI signals.",
+  role: "Lead programmer",
+  links: [
+    {
+      url: "https://youtu.be/j5Xr8TlIX_A",
+      label: "Video",
+    },
+    {
+      url: "https://github.com/esromerog/BeatMotion",
+      label: "GitHub",
+    },
+  ],
+});
+
+
+Beat Motion is a direct interface between the movement of the body and sound. It used consumer-grade hardware (Kinect) to output MIDI notes that can be used in any audio software.
+
+This is a MIDI controller for music production built using a Kinect. It allows the user to "control knobs" using their left arm and to send notes with a 2x3 grid on the right hand.
+
+## Role and Tools
+
+I led a small team of four people, where I programmed the interface on C++, and produced the original soundtrack in Ableton Live.
+
+<img src="/images/projects/beat-motion/process.jpg" alt="The team during the work process" />

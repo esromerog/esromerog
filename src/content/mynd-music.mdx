@@ -1,0 +1,59 @@
+import { defineMetadata } from "../types/projects"
+
+export const metadata = defineMetadata({
+  name: "Mynd Music",
+  tags: [{name: "EEG", show: true}, {name: "VR", show: true}, {name: "Adaptive Environments", show: true}],
+  description:
+    "A scientific-artistic project to create an adaptive, highly immersive VR environment influenced by EEG data.",
+  role: "Creative director · Programmer (Unity/EEG Analysis) · Experience designer",
+  links: [
+    {
+      url: "https://github.com/esromerog/Mynd-Music",
+      label: "GitHub",
+    },
+    {
+      url: "https://www.youtube.com/watch?v=Glc25Y9Vxaw",
+      label: "3D Recording",
+    },
+    {
+      url: "/pdfs/Mynd.pdf",
+      label: "Transcript",
+    },
+  ],
+});
+
+# Mynd Music
+
+It all begins by creating a feeling, and translating it into music. Mynd Music is a project where we seek to create music based on a person's feelings throughout a VR experience.
+
+It was presented at INC Monterrey 2022 on behalf of Laboratorio Arte, A.C.
+
+The core team consisted of five people tasked with music production, analysis, connectivity and the design of the physical installation.
+
+## Role
+
+Creative Director · Main Programmer - 3D Experience · Programmer - EEG Analysis Pipeline
+
+## Tools
+
+Unity 3D · MNE · BrainFlow · TCP
+
+## Background
+
+I wanted to make this project an exploration of different environments within our minds. The experience walks the subject through changing environments that are meant to reflect various emotional states, from the peace of being connected to nature, to the dread of anxiety and isolation. Meanwhile, the EEG analysis is based on emotional models of valence and arousal [[1]](https://doi.org/10.1111/1467-8721.00003) measured with consumer-grade devices [[2]](https://doi.org/10.3389/fnhum.2021.745135).
+
+## References
+
+1. Barrett, L. F., & Russell, J. A. (1999). The structure of current affect. *Current Directions in Psychological Science, 8*(1), 10–14. [doi:10.1111/1467-8721.00003](https://doi.org/10.1111/1467-8721.00003)
+2. Cannard, C., Wahbeh, H., & Delorme, A. (2021). Electroencephalography correlates of well-being using a low-cost wearable system. *Frontiers in Human Neuroscience,* 15, 745135. [doi:10.3389/fnhum.2021.745135](https://doi.org/10.3389/fnhum.2021.745135)
+
+<img src="/images/projects/mynd_music/presentation.jpg" alt="Equipment used for the project displayed at INC Monterrey." />
+
+<Carousel>
+  <img src="/images/projects/mynd_music/intro.jpg" alt="First scene in VR" />
+  <img src="/images/projects/mynd_music/forest.jpg" alt="Forest scene in VR" />
+  <img src="/images/projects/mynd_music/coffee.jpg" alt="VR café" />
+  <img src="/images/projects/mynd_music/coffee2.jpg" alt="VR café transition" />
+  <img src="/images/projects/mynd_music/dessert.jpg" alt="Desert scene in VR" />
+  <img src="/images/projects/mynd_music/end.jpg" alt="Ending of the experience" />
+</Carousel>

@@ -1,0 +1,1 @@
+export const slugList = [{slug: "quantified-self"}, { slug: "beat-motion" }, { slug: "mutual-wave-machine" }, {slug: "mynd-music"}, {slug: "thousand-word-speller"}, {slug: "waterfall"}];

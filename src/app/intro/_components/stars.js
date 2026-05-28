@@ -27,8 +27,6 @@ export const starsSketch = (
     p.frameRate(30);
     fft = new window.p5.FFT(0.8, 64);
     amps = new window.p5.Amplitude();
-
-
   };
 
   console.log(playButtonRef);
