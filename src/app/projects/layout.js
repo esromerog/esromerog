@@ -32,7 +32,7 @@ function NavBar() {
           >
             CV
           </a>
-          <Link
+          {/*<Link
             href="/projects/about"
             className={clsx(
               "navbar-link",
@@ -40,7 +40,7 @@ function NavBar() {
             )}
           >
             Me
-          </Link>
+          </Link>*/}
           <a
             href="https://github.com/esromerog"
             target="_blank"

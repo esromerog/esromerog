@@ -1,4 +1,5 @@
 // import Garden from "./_components/three-js/garden";
+import { Suspense } from "react";
 import { slugList } from "./_utils/slugList";
 import { getAllProjectMetadata } from "./_utils/getAllMDX";
 import { metadata } from "../../content/beat-motion.mdx";
@@ -19,8 +20,10 @@ export default async function ProjectsPage(props) {
       <div className="scrollable-projects">
         <div className="projects-text">
           <ProjectsHeader />
-          <ProjectsSearch />
-          <ProjectsTable projects={projects} />
+          <Suspense>
+            <ProjectsSearch />
+            <ProjectsTable projects={projects} />
+          </Suspense>
         </div>
       </div>
     </div>

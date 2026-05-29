@@ -12,3 +12,5 @@ declare module '*.glsl' {
   const value: string
   export default value
 }
+
+declare module 'p5/lib/addons/p5.sound' {}
