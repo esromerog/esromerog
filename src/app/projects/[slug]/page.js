@@ -8,7 +8,7 @@ export default async function Page({ params }) {
   const { default: Project, metadata } = await import(`@/content/${slug}.mdx`);
 
   return (
-    <div className="projects-page">
+    <div className="projects-page background-beige">
       <div className="position-absolute">
         {/*<P5Wrapper
           sketch={backgroundSketch}

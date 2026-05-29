@@ -14,7 +14,7 @@ export default async function ProjectsPage(props) {
   return (
     <div className="projects-page">
       <div className="position-absolute">
-        <ShaderBackground />
+        <ShaderBackground key={props.params}/>
       </div>
       <div className="scrollable-projects">
         <div className="projects-text">
@@ -30,7 +30,7 @@ export default async function ProjectsPage(props) {
 function ProjectsHeader({}) {
   return (
     <div>
-      <h1>my work</h1>
+      <h1>My Work</h1>
       <p>
         My projects are focused on creating digital worlds tuned to our
         individual physiology and putting those tools in the hands of other

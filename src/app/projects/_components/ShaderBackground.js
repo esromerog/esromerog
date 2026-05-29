@@ -6,14 +6,14 @@ import frag from "./shaders/gradient-sky.frag.glsl";
 
 export default function ShaderBackground() {
   const canvasRef = useRef(null);
+  const instanceRef = useRef(null);
 
   useEffect(() => {
-    const createBg = () => createShaderBg(canvasRef.current);
-    createBg();
-    // window.addEventListener("resize", createBg);
-    return () => {
-      // window.removeEventListener("resize", createBg);
+    const createBg = () => {
+      if (!instanceRef.current)
+        instanceRef.current = createShaderBg(canvasRef.current);
     };
+    createBg();
   }, []);
 
   return <canvas className="w-100 h-100" ref={canvasRef}></canvas>;
