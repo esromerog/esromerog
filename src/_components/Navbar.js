@@ -31,7 +31,7 @@ export default function NavBar() {
             Projects
           </Link>
           <Link
-            href="/projects/about"
+            href="/me"
             className={clsx(
               "navbar-link",
               pathname.startsWith("/me") && "active",
