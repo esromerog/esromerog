@@ -24,7 +24,7 @@ export default function Me() {
                 target="_blank"
                 className="button-primary"
               >
-                Portfolio Github
+                Portfolio GitHub
               </a>
             </div>
             <p>

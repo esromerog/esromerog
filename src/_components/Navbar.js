@@ -30,23 +30,15 @@ export default function NavBar() {
           >
             Projects
           </Link>
-          <a
-            href="/pdfs/EstebanRomeroCV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="navbar-link"
-          >
-            CV
-          </a>
-          {/*<Link
+          <Link
             href="/projects/about"
             className={clsx(
               "navbar-link",
-              pathname.startsWith("/projects/about") && "active",
+              pathname.startsWith("/me") && "active",
             )}
           >
             Me
-          </Link>*/}
+          </Link>
           <a
             href="https://github.com/esromerog"
             target="_blank"
