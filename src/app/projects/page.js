@@ -15,13 +15,13 @@ export default async function ProjectsPage(props) {
   return (
     <div className="projects-page">
       <div className="position-absolute">
-        <ShaderBackground key={props.params}/>
+        <ShaderBackground key={props.params} />
       </div>
       <div className="scrollable-projects">
         <div className="projects-text">
           <ProjectsHeader />
+          <ProjectsSearch />
           <Suspense>
-            <ProjectsSearch />
             <ProjectsTable projects={projects} />
           </Suspense>
         </div>
