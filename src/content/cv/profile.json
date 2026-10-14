@@ -1,0 +1,33 @@
+{
+  "name": "esteban romero",
+  "pronouns": "he / him",
+  "tagline": "Finding new forms of connection through play & technology.",
+  "categories": [
+    "Games",
+    "Interactive Art & Technology",
+    "Education",
+    "Engineering"
+  ],
+  "email": "esromerog@gmail.com",
+  "links": {
+    "website": "https://esromerog.com",
+    "github": "https://github.com/esromerog",
+    "itch": "https://immortaicarus.itch.io",
+    "linkedin": "https://www.linkedin.com/in/esromerog/",
+    "instagram": "https://www.instagram.com/tacosrosas/"
+  },
+  "education": [
+    {
+      "role": "MFA in Game Design",
+      "org": "New York University",
+      "start": "2025-09",
+      "end": "2027-05"
+    },
+    {
+      "role": "BS in Biomedical Engineering",
+      "org": "Tecnológico de Monterrey | 4.0 GPA & Academic Excellence",
+      "start": "2020-08",
+      "end": "2024-06"
+    }
+  ]
+}

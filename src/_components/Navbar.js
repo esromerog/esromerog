@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import clsx from "clsx";
+import { links } from "@/content/cv/profile.json";
 
 export default function NavBar() {
   const [fullScreenNav, setFullScreenNav] = useState(false);
@@ -40,7 +41,7 @@ export default function NavBar() {
             Me
           </Link>
           <a
-            href="https://github.com/esromerog"
+            href={links.github}
             target="_blank"
             rel="noopener noreferrer"
             className={clsx(
@@ -51,7 +52,7 @@ export default function NavBar() {
             GitHub
           </a>
           <a
-            href="https://immortaicarus.itch.io"
+            href={links.itch}
             target="_blank"
             rel="noopener noreferrer"
             className={clsx(

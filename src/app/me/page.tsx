@@ -1,5 +1,6 @@
 import NavBar from "../../_components/Navbar";
 import Link from "next/link";
+import { email, links } from "@/content/cv/profile.json";
 export default function Me() {
   return (
     <div className="portfolio-main">
@@ -13,8 +14,7 @@ export default function Me() {
             </p>
             <div className="d-flex">
               <Link
-                href={"/pdfs/EstebanRomeroCV.pdf"}
-                target="_blank"
+                href="/cv"
                 className="button-primary me-4px"
               >
                 CV
@@ -37,10 +37,10 @@ export default function Me() {
               Guadalajara, México.
             </p>
             <h2 className="mb-n0-5">Contact</h2>
-            <p>esromerog@gmail.com</p>
+            <p>{email}</p>
             <div className="social-icons">
               <a
-                href="https://www.linkedin.com/in/esromerog/"
+                href={links.linkedin}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -50,7 +50,7 @@ export default function Me() {
                 ></img>
               </a>
               <a
-                href="https://www.instagram.com/tacosrosas/"
+                href={links.instagram}
                 target="_blank"
                 rel="noreferrer"
               >

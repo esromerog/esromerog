@@ -1,0 +1,70 @@
+[
+  {
+    "role": "Conference Speaker",
+    "name": "YouQuantified",
+    "org": "5th International Mobile Brain / Imaging Conference in Piran, Slovenia",
+    "start": "2024",
+    "categories": [
+      "Education",
+      "Engineering"
+    ],
+    "orgUrl": "https://www.zrs-kp.si/wp-content/uploads/2024/12/Zbornik-povzetkov-MOBI-CONFERENCE_ONLINE1.pdf#page=52"
+  },
+  {
+    "role": "TEDx Conference Speaker",
+    "name": "Pictures From the Mind",
+    "org": "Tecnológico de Monterrey, Guadalajara",
+    "start": "2024",
+    "categories": [
+      "Interactive Art & Technology"
+    ],
+    "orgUrl": "https://www.ted.com/tedx/events/51496"
+  },
+  {
+    "role": "Conference Speaker",
+    "name": "Techno Futuristic Dreams of Virtual Utopias",
+    "org": "GS1 New York University",
+    "links": [
+      {
+        "label": "Link",
+        "url": "https://gstudies.one"
+      }
+    ],
+    "start": "2024",
+    "categories": [
+      "Interactive Art & Technology"
+    ]
+  },
+  {
+    "role": "Publication",
+    "name": "Wearable Biosensor Technologies in Education",
+    "org": "MDPI Sensors Journal",
+    "links": [
+      {
+        "label": "Link",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38676053/"
+      }
+    ],
+    "start": "2024-04",
+    "categories": [
+      "Education",
+      "Engineering"
+    ]
+  },
+  {
+    "role": "Award",
+    "name": "A Thousand Word Speller",
+    "org": "Virtual BR4IN.io Hackathon in the Programming & Arts Category",
+    "links": [
+      {
+        "label": "Link",
+        "url": "https://www.br41n.io/Spring-School-2023"
+      }
+    ],
+    "start": "2023-04",
+    "categories": [
+      "Interactive Art & Technology",
+      "Engineering"
+    ]
+  }
+]

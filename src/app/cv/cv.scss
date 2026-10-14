@@ -1,0 +1,221 @@
+
+.cv {
+  --cv-pink: #ff7c94;
+  --cv-marker: "✦";
+  --cv-contact: 18px;
+
+  --cv-print-heading-color: var(--cv-pink);
+  --cv-print-contact: 11pt;
+  --cv-print-name: 18pt;
+  --cv-print-pronouns: 10pt;
+  --cv-print-heading: 13pt;
+  --cv-print-title: 11pt;
+  --cv-print-body: 10pt;
+}
+
+.cv {
+
+  h1,
+  h2 {
+    color: var(--cv-pink);
+  }
+
+  .cv-contact {
+    margin: 0 0 1rem;
+    font-size: var(--cv-contact);
+    color: var(--color-muted-strong);
+  }
+
+  .cv-pronouns {
+    font-size: 0.4em;
+    font-weight: 400;
+  }
+
+  .cv-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 1rem;
+
+    // "Print all" is the secondary action: same size, no fill.
+    .cv-print-all {
+      background: none;
+    }
+  }
+
+  .cv-starred h3::after {
+    content: var(--cv-marker);
+    color: var(--cv-pink);
+    margin-left: 6px;
+    font-weight: 400;
+  }
+
+  .cv-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 1rem;
+  }
+
+  .cv-chip {
+    padding: 4px 12px;
+    border: 1px solid var(--color-border);
+    background: none;
+    font-family: "EB Garamond", serif;
+    font-size: 16px;
+    cursor: pointer;
+
+    &.active {
+      background: var(--color-accent);
+    }
+  }
+
+  .cv-entry {
+    margin-top: 1.25rem;
+
+    h3 {
+      font-family: "EB Garamond", serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 18px;
+      margin: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    ul {
+      margin: 0.25rem 0 0;
+      padding-left: 1.5rem;
+      font-size: 16px;
+      line-height: 1.5rem;
+    }
+
+  }
+
+  .cv-entry-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: baseline;
+  }
+
+  .cv-dates {
+    white-space: nowrap;
+    font-size: 16px;
+  }
+}
+
+// Template look: Fraunces pink headings, grey underlined contact line.
+@page {
+  size: letter;
+  margin: 0.6in 1in;
+}
+
+@media print {
+  body {
+    overflow: visible;
+    background: #fff;
+  }
+
+  .navbar-container,
+  .no-print {
+    display: none !important;
+  }
+
+  // Default print = highlights only; "Print all" sets data-print-all on <html>.
+  html:not([data-print-all]) .cv-print-skip {
+    display: none !important;
+  }
+
+  .projects-page.cv {
+    background: none;
+
+    .scrollable-projects {
+      display: block;
+      height: auto;
+      overflow: visible;
+    }
+
+    .projects-text {
+      padding: 0;
+      max-width: none;
+    }
+
+    .cv-contact {
+      text-align: center;
+      font-size: var(--cv-print-contact);
+      margin: 0;
+
+      a {
+        color: var(--color-muted);
+        text-decoration: underline;
+      }
+    }
+
+    h1,
+    h2 {
+      color: var(--cv-print-heading-color);
+      // Without this, browsers darken light text in print to save ink.
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    h1 {
+      font-size: var(--cv-print-name);
+      font-weight: 600;
+      margin-top: 0.14in;
+    }
+
+    .cv-pronouns {
+      font-size: var(--cv-print-pronouns);
+      font-weight: 600;
+    }
+
+    h2 {
+      font-size: var(--cv-print-heading);
+      margin: 0.35in 0 0;
+      break-after: avoid;
+    }
+
+    p,
+    li {
+      font-size: var(--cv-print-body);
+      line-height: 1.35;
+    }
+
+    .cv-entry {
+      break-inside: avoid;
+      margin-top: 0.1in;
+
+      h3 {
+        font-size: var(--cv-print-title);
+        line-height: 1.3;
+        break-after: avoid;
+      }
+    }
+
+    .cv-dates {
+      font-size: var(--cv-print-body);
+    }
+
+    .cv-starred h3::after {
+      content: none;
+    }
+
+    .cv-entry ul {
+      margin-top: 0;
+      padding-left: 0.3in;
+      list-style: disc;
+    }
+
+    .cv-section > .cv-entry:first-of-type {
+      margin-top: 0.06in;
+    }
+
+    a {
+      color: inherit;
+    }
+  }
+}

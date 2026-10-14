@@ -1,0 +1,138 @@
+[
+  {
+    "role": "Teaching Assistant",
+    "name": "Game Studio I",
+    "org": "New York University Tisch School of Arts",
+    "start": "2026-09",
+    "summary": "Helped first-year game-design graduates through code, game design, or visual art questions. Assisted professors in classroom management and facilitated peer feedback and playtesting.",
+    "categories": [
+      "Games",
+      "Education"
+    ],
+    "priority": 3
+  },
+  {
+    "role": "Collaborator",
+    "name": "New York City Hall of Science",
+    "org": "New York University, NYSCI",
+    "start": "2025-03",
+    "summary": "Ran a series of educational workshops and helped in the co-design of tabletop activities and games with their “Explainers”. We explored technologies for biosensing and real-time machine learning models for facial and emotion recognition from video streams.",
+    "bullets": [
+      {
+        "text": "Collaborated with Columbia’s ARNI lab for the brainstorming and design of these activities."
+      }
+    ],
+    "categories": [
+      "Education"
+    ],
+    "priority": 2
+  },
+  {
+    "role": "Member of Showcase Committee",
+    "org": "New York University",
+    "start": "2026-03",
+    "bullets": [
+      {
+        "text": "Helped in the organization of our annual Game Center Spring Showcase with more than 800 attendees. Specifically, I was part of the team involved in branding & printed materials."
+      }
+    ],
+    "categories": [
+      "Games"
+    ],
+    "priority": 2
+  },
+  {
+    "role": "Assistant",
+    "name": "Lincoln Center’s Game Making Create-athon",
+    "org": "New York University",
+    "links": [
+      {
+        "label": "Event Link",
+        "url": "https://lincolncenter.org/series/lincoln-center-presents/create-athon-game-making-986"
+      }
+    ],
+    "start": "2026-04",
+    "bullets": [
+      {
+        "text": "Assisted in running a community-outreach event that allowed children, families, and adults to get hands-on experience with analogue game design by modding and creating their own games."
+      }
+    ],
+    "categories": [
+      "Games",
+      "Education"
+    ],
+    "priority": 2
+  },
+  {
+    "role": "Assistant",
+    "name": "THE TEST",
+    "org": "New York University",
+    "start": "2025-10",
+    "bullets": [
+      {
+        "text": "Assisted in running the initial playtest for a large-scale social game and artistic experience designed by Eric Zimmerman."
+      }
+    ],
+    "categories": [
+      "Games",
+      "Interactive Art & Technology"
+    ],
+    "priority": 2
+  },
+  {
+    "role": "Vice-President and Co-Founder",
+    "name": "wavesense Student Club",
+    "org": "Tecnológico de Monterrey, Guadalajara",
+    "start": "2022-01",
+    "end": "2023-06",
+    "bullets": [
+      {
+        "text": "Led a 30+ member student club dedicated to neuroscience workshops, science outreach, and research."
+      },
+      {
+        "text": "Worked on biofeedback-based games and installations for events and hackathons for the student community."
+      }
+    ],
+    "categories": [
+      "Education",
+      "Interactive Art & Technology"
+    ],
+    "priority": 1
+  },
+  {
+    "role": "Research Affiliate",
+    "name": "NT Lab",
+    "org": "Tecnológico de Monterrey, Guadalajara",
+    "start": "2022-03",
+    "end": "2023-06",
+    "bullets": [
+      {
+        "text": "Conducted research on motor rehabilitation treatments using a neuroprosthesis."
+      }
+    ],
+    "categories": [
+      "Engineering"
+    ],
+    "priority": 1
+  },
+  {
+    "role": "Research Affiliate",
+    "name": "BRAIN Tec",
+    "org": "Tecnológico de Monterrey, Monterrey",
+    "start": "2022-08",
+    "end": "2023-06",
+    "bullets": [
+      {
+        "text": "Co-developed software for the real-time data collection, recording, and preprocessing of a brain-to-brain synchrony study in education."
+      },
+      {
+        "text": "Co-wrote and published a review on the use of Wearable Devices in Education."
+      }
+    ],
+    "categories": [
+      "Engineering",
+      "Education"
+    ],
+    "priority": 1
+  }
+]

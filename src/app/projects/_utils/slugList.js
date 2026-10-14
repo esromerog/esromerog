@@ -1,1 +1,1 @@
-export const slugList = [{slug: "quantified-self"}, { slug: "beat-motion" }, { slug: "mutual-wave-machine" }, {slug: "mynd-music"}, {slug: "thousand-word-speller"}, {slug: "waterfall"}];
+export const slugList = [{slug: "quantified-self"}, {slug: "stop-to-play"}, { slug: "beat-motion" }, { slug: "mutual-wave-machine" }, {slug: "mynd-music"}, {slug: "thousand-word-speller"}, {slug: "waterfall"}, {slug: "get-it-together"}, {slug: "sweet-and-sour"}, {slug: "midnight-gala"}, {slug: "xenbox"}];

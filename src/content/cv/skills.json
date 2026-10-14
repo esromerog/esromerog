@@ -1,0 +1,36 @@
+[
+  {
+    "group": "Game Development & Interactive Systems",
+    "items": [
+      { "text": "Unity (C#) for complex systems, custom physics & multiplayer", "categories": ["Games", "Engineering"] },
+      { "text": "Game persistence and networking with alternative input sources (phones and physical devices)", "categories": ["Games", "Engineering"]},
+      { "text": "Analogue game design for social experiences", "categories": ["Games"]},
+      { "text": "Biofeedback-driven games with heart & brain data", "categories": ["Games", "Interactive Art & Technology"] },
+      { "text": "Tech art & shader coding", "categories": ["Games", "Interactive Art & Technology"] },
+      { "text": "Mocap & animation", "categories": ["Games", "Interactive Art & Technology"] }
+    ]
+  },
+  {
+    "group": "Design & Web",
+    "items": [
+      { "text": "Full-stack development & deployment", "categories": ["Engineering"] },
+      { "text": "Git workflows & collaborative development", "categories": ["Games", "Engineering"] },
+      { "text": "UX/UI mockups and design systems in Figma", "categories": ["Education", "Games"] },
+      { "text": "Creative data visualization in p5.js & Processing", "categories": ["Interactive Art & Technology", "Education"] }
+    ]
+  },
+  {
+    "group": "Physical Computing & Fabrication",
+    "items": [
+      { "text": "Electronics design & prototyping with Arduino and other microcontrollers", "categories": ["Engineering", "Interactive Art & Technology"] },
+      { "text": "3D modeling & printing in Fusion 360 & AutoCAD", "categories": ["Engineering"] }
+    ]
+  },
+  {
+    "group": "Data Processing & Research",
+    "items": [
+      { "text": "Signal processing from multi-modal data & biosignals", "categories": ["Engineering"]},
+      { "text": "Real-time ML classification and LLM agent design with Langgraph", "categories": ["Engineering"]}
+    ]
+  }
+]
