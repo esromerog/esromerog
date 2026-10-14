@@ -6,6 +6,8 @@ export interface ProjectMetadata {
     }[]
     description: string
     role: string
+    /** Hides the project from the projects page while it has no content. */
+    draft?: boolean
     /** "YYYY" or "YYYY-MM" */
     start: string
     /** "YYYY" or "YYYY-MM", or "present" if ongoing. */

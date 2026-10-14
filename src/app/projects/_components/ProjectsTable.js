@@ -18,8 +18,8 @@ function filterProjects(project, query) {
 export default function ProjectsTable({ projects }) {
   const searchParams = useSearchParams();
   const query = searchParams.get("query") || "";
-  const filteredProjects = projects.filter((project) =>
-    filterProjects(project, query),
+  const filteredProjects = projects.filter(
+    (project) => !project.metadata.draft && filterProjects(project, query),
   );
 
   return (
