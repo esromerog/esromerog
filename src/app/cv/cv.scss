@@ -63,6 +63,7 @@
     background: none;
     font-family: "EB Garamond", serif;
     font-size: 16px;
+    color: inherit; // mobile browsers default buttons to link-blue
     cursor: pointer;
 
     &.active {
@@ -104,6 +105,14 @@
   .cv-dates {
     white-space: nowrap;
     font-size: 16px;
+  }
+
+  // Mobile: dates drop below the title instead of sharing its row.
+  @media (max-width: 600px) {
+    .cv-entry-head {
+      flex-direction: column;
+      gap: 0;
+    }
   }
 }
 
