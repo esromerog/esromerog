@@ -30,7 +30,7 @@ export const starsSketch = (
   };
 
   console.log(playButtonRef);
-  playButtonRef.current.onclick = function () {
+  if (playButtonRef.current) playButtonRef.current.onclick = function () {
     if (isPlaying.current) {
       console.log("Pausing!");
       mysound.pause();

@@ -2,6 +2,8 @@ precision mediump float;
 
 uniform vec2 iResolution;
 uniform float iTime;
+// 0 = black, 1 = full colors. The top of the screen lags behind the bottom.
+uniform float uReveal;
 // From the book of shaders random
 // https://thebookofshaders.com/10/
 float random (vec2 st) {
@@ -32,5 +34,10 @@ void main () {
     vec3 color = mix(beige, coral, smoothstep(0., 0.36, st.y + noiseVal * noiseIntensity));
     color = mix(color, liliac, smoothstep(0.36, 0.99, st.y + noiseVal * noiseIntensity));
     
-	gl_FragColor = vec4(color, 1.0);
+    // Fade in from black, bottom first. `lag` is how much later the top finishes.
+    float lag = 0.6;
+    float reveal = clamp(uReveal * (1.0 + lag) - st.y * lag, 0.0, 1.0);
+    reveal = smoothstep(0.0, 1.0, reveal);
+
+	gl_FragColor = vec4(color * reveal, 1.0);
 }

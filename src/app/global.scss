@@ -2,7 +2,10 @@
 
 body {
   margin: 0;
-  font-family: "EB Garamond", serif, -apple-system;
+  font-family:
+    "EB Garamond",
+    serif,
+    -apple-system;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
@@ -11,10 +14,9 @@ body {
   scroll-snap-type: y mandatory;
 }
 
-
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family:
+    source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 /*csslint backdrop-filter:false */
@@ -26,8 +28,6 @@ h1 {
   margin: 0px;
   font-optical-sizing: auto;
 }
-
-
 
 h2 {
   font-family: "Fraunces", serif;
@@ -51,6 +51,23 @@ p {
   line-height: 1.5rem;
 }
 
+// Links for the intro
+
+.intro-link-group {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+
+  a,
+  a:visited {
+    color: var(--color-cream);
+    text-decoration: none;
+    font-size: 18px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
 
 .button-primary {
   display: flex;
@@ -71,6 +88,27 @@ p {
 
   &:hover {
     box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+  }
+}
+
+// Sound toggle, bottom left of the intro (must stay below .button-primary so its overrides win)
+.sound-toggle {
+  @extend .button-primary;
+  background-color: var(--color-accent-strong);
+  border: var(--color-cream) 1px solid;
+  color: var(--color-cream);
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 10;
+  padding: 8px;
+  font-family: "Material Symbols Outlined";
+  font-size: 24px;
+
+  &:hover {
+    background-color: var(--color-cream);
+    border: var(--color-ink) 1px solid;
+    color: var(--color-ink);
   }
 }
 
@@ -119,7 +157,6 @@ p {
   z-index: -100;
   top: 0;
   left: 0;
-
 }
 
 .position-sticky {
@@ -198,18 +235,17 @@ p {
   background-color: rgba(255, 255, 255, 0.1);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.10);
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.1);
   transition: all 0.5 ease-in;
 }
-
 
 /* Expanded Portfolio */
 
 .initial-header {
-  letter-spacing: 0.25rem;
+  letter-spacing: 0rem;
+  color: var(--color-accent-strong);
   z-index: 101;
 }
-
 
 .h-100 {
   height: 100vh;
@@ -231,7 +267,6 @@ canvas {
   display: block;
   // will-change: filter;
 }
-
 
 .background-beige {
   background-color: var(--color-paper);
@@ -267,40 +302,6 @@ canvas {
       color: var(--color-ink);
     }
   }
-}
-
-
-.search-container {
-  padding: 16px;
-  border: 1px solid var(--color-ink-strong);
-  margin-top: -1px;
-  overflow: hidden;
-  align-items: flex-start;
-  display: flex;
-  // background-color: #F2AAAA;
-}
-.search {
-  width: 100%;
-  label {
-    font-family: 'Fraunces', serif;
-    font-size: 18px;
-    padding-bottom: 8px;
-  }
-  input {
-    font-family: "EB Garamond", serif, -apple-system;
-    font-size: 18px;
-    border-radius: 0px;
-    border: 1px solid var(--color-ink-strong);
-    padding: 8px 16px;
-    width: 100%;
-    box-sizing: border-box;
-    margin: 0px;
-    &:focus {
-      // outline: 1px solid #303030;
-      outline: none;
-    }
-  }
-
 }
 
 img {
@@ -340,25 +341,6 @@ img {
   margin: 0;
 }
 
-
-.intro-div button {
-  border-radius: 4rem;
-  border: 1px solid var(--color-cream);
-  background-color: rgba(0, 0, 0, 0);
-  color: var(--color-cream);
-  width: 4rem;
-  height: 4rem;
-  transition: all 0.5s ease-in;
-}
-
-.intro-div button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.10);
-  transition: all 0.5s ease-in;
-}
-
 .cls-1 {
   fill: none;
   stroke: var(--color-cream);
@@ -370,7 +352,6 @@ img {
   fill: var(--color-cream);
   stroke-width: 0px;
 }
-
 
 .final-button {
   opacity: 100;
@@ -397,7 +378,7 @@ img {
   left: 0;
   z-index: -2;
   color: var(--color-ink);
-  background: linear-gradient(245deg, #FFDAF0 0%, #D1FCF3 100%);
+  background: linear-gradient(245deg, #ffdaf0 0%, #d1fcf3 100%);
 }
 
 .blocking {
@@ -414,6 +395,32 @@ img {
   z-index: 100 !important;
 }
 
+// Full-screen black cover used for the intro -> page transition (see PageTransition.js)
+.page-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: #000;
+  opacity: 0;
+  pointer-events: none;
+  // Fading back out on the new page: hold black briefly, then reveal
+  transition: opacity 0.8s ease-out 0.3s;
+}
+
+// Fading to black on the way out (keep duration in sync with FADE_OUT_MS)
+.is-leaving .page-transition {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.75s ease-in;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition,
+  .is-leaving .page-transition {
+    transition: none;
+  }
+}
+
 @media (max-width: 600px) {
   .main-background {
     height: 110vh;
@@ -428,9 +435,7 @@ img {
   color: var(--color-ink);
 }
 
-
 /* Portfolio */
-
 
 .info-card .accordion-content {
   display: none;
@@ -450,7 +455,6 @@ img {
   margin-top: 2rem;
   flex-wrap: wrap;
 }
-
 
 .navbar-container {
   width: 100vw !important;
@@ -501,13 +505,11 @@ img {
   justify-content: center;
 }
 
-
 .navbar .navigation {
   display: flex;
   gap: 8px;
   margin-right: 8px;
 }
-
 
 .button-content {
   border: 1px solid var(--color-ink);
@@ -519,7 +521,9 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: Josefin Sans, sans-serif;
+  font-family:
+    Josefin Sans,
+    sans-serif;
   font-weight: 400;
   background: none;
   font-size: medium;
@@ -576,7 +580,6 @@ img {
   border-radius: 4px;
 }
 
-
 .info-card-title button {
   background: none;
   border: none;
@@ -589,7 +592,6 @@ img {
   display: flex;
 }
 @media (hover: hover) {
-
   .social-icons img:hover {
     color: var(--color-ink);
     box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.3);
@@ -600,7 +602,7 @@ img {
     background-color: rgba(255, 255, 255, 0.5);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.10);
+    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.1);
     text-shadow: none;
   }
 
@@ -609,17 +611,13 @@ img {
     text-shadow: 0px 2px 12px rgba(0, 0, 0, 0.3);
     cursor: pointer;
   }
-
-
 }
-
 
 .expand-button {
   position: absolute;
   right: 0;
   top: 0;
 }
-
 
 .info-card {
   z-index: 100;
@@ -642,13 +640,12 @@ img {
 
 .info-card.center {
   outline: 1px solid var(--color-ink);
-  background: rgba(255, 255, 255, 0.20);
-  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.10);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.1);
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
   transition: all 0.8s ease;
 }
-
 
 .info-card-title {
   min-width: 45%;
@@ -674,7 +671,6 @@ img {
   font-weight: normal;
 }
 
-
 .spacer {
   min-height: 30vh;
   display: flex;
@@ -688,11 +684,9 @@ img {
   border: none;
 }
 
-
 .accordion-content .info-card-description {
   margin-left: 50%;
 }
-
 
 .margin-bottom {
   margin-bottom: 2rem;
@@ -705,7 +699,7 @@ img {
 
 .refs {
   background: rgb(255, 255, 255, 0.95) 100% !important;
-  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.10);
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.1);
   -webkit-backdrop-filter: blur(6px) !important;
   backdrop-filter: blur(6px) !important;
   max-width: 300px;
@@ -713,8 +707,6 @@ img {
   border-radius: 0px !important;
   z-index: 102;
 }
-
-
 
 .project-card-container {
   display: grid;
@@ -725,35 +717,158 @@ img {
   }
 }
 
-.project-card {
-  // max-width: 360px;
-  .card-tags {
-    display: flex;
-    flex-wrap: wrap;
-    p {
-      margin: -0.5px;
-      display: inline-flex;
-      padding: 8px 16px;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid var(--color-border);
-      background: var(--color-mint);
-    }
-  }
-  .card-body {
-    background: var(--color-paper);
-    margin: -0.5px;
-    padding: 16px;
-    border: 1px solid var(--color-border);
-    h2 {
-      margin-top: 1rem;
-    }
-    p {
-      margin-top: 0.5rem;
-    }
+// Filter bar (projects page). Chip look matches .cv-chip in cv.scss.
+.project-filter {
+  margin-bottom: 1.5rem;
+
+  h2 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    font-weight: 600;
   }
 }
 
+.chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px; // same box as .button-primary
+  border: 1px solid var(--color-border);
+  background: transparent;
+  font-family: "EB Garamond", serif;
+  font-size: 16px;
+  line-height: normal;
+  color: inherit; // mobile browsers default buttons to link-blue
+  cursor: pointer;
+
+  &.active {
+    background: var(--color-mint);
+  }
+
+  &.chip-star {
+    padding-left: 12px;
+  }
+
+  .chip-star-icon {
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  .chip-x {
+    font-size: 16px;
+    margin-right: -4px;
+  }
+}
+
+// Project card: header tags on top, body (optional image + subtitle), tags below.
+// Header and tag rows are narrower than the body so the edges stagger.
+.project-card {
+  // Description box only; tags and header tags keep the regular chip padding (8px 16px).
+  --card-pad-x: 16px;
+  --card-pad-y: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  .card-header,
+  .card-tags {
+    display: flex;
+    max-width: 100%;
+  }
+
+  // When the row is too narrow, whole chips wrap to the next line.
+  .card-header,
+  .card-tags {
+    flex-wrap: wrap;
+  }
+
+  .card-box {
+    margin: -0.5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 8px 16px;
+    border: 1px solid var(--color-border);
+    font-family: "EB Garamond", serif;
+    font-size: 16px;
+    line-height: 1.5rem;
+  }
+
+  .card-header .card-box {
+    background: var(--color-cream);
+    color: var(--color-ink-strong);
+  }
+
+  .card-title {
+    margin-top: -0.5px; // undo the global h2 spacing
+    font-weight: 700;
+    text-align: left;
+  }
+
+  .card-year {
+    gap: 8px;
+  }
+
+  .card-star {
+    color: var(--color-accent-strong);
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  // Square: same height as the other header tags (24px line + 2 * 8px padding + 2px border).
+  .card-header .card-link {
+    width: calc(1.5rem + 18px);
+    height: calc(1.5rem + 18px);
+    padding: 0;
+    background: var(--color-accent);
+    color: var(--color-ink-strong);
+    text-decoration: none;
+
+    &:hover {
+      box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+    }
+
+    .material-symbols-outlined {
+      font-size: 16px;
+    }
+  }
+
+  .card-body {
+    align-self: stretch;
+    margin: -0.5px;
+    background: var(--color-cream);
+    border: 1px solid var(--color-ink-strong);
+  }
+
+  .card-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border: 0;
+    border-bottom: 1px solid var(--color-ink-strong);
+  }
+
+  .card-subtitle {
+    margin: 0;
+    padding: var(--card-pad-y) var(--card-pad-x);
+    font-size: 16px;
+    line-height: 1.5rem;
+  }
+
+  .card-tags .card-box {
+    margin: -0.5px;
+    background: var(--color-mint);
+    color: var(--color-ink-strong);
+  }
+}
 
 @media (max-width: 600px) {
   .refs {
@@ -819,7 +934,6 @@ img {
     flex-direction: column;
     align-items: center;
   }
-
 
   .info-card .row {
     min-width: 100%;
@@ -915,12 +1029,10 @@ img {
     padding-left: 0 !important;
   }
 
-
   .expanded .initial-intro {
     margin-left: 2rem;
     padding-right: 2rem;
   }
-
 }
 
 .expanded {
@@ -928,8 +1040,8 @@ img {
   padding-top: 5rem;
   padding-left: 2rem;
   border-bottom: 1px solid var(--color-ink);
-  background: rgba(255, 255, 255, 0.20);
-  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.10);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.1);
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
 }
@@ -959,7 +1071,7 @@ img {
 }
 
 .initial-intro {
-  margin-right: 1.5rem
+  margin-right: 1.5rem;
 }
 
 .expanded h3 {
@@ -994,8 +1106,6 @@ img {
   margin-top: 2rem;
 }
 
-
-
 .image-carousel img {
   height: auto;
   width: 100%;
@@ -1008,8 +1118,8 @@ img {
 
 .next-element {
   outline: 1px solid var(--color-ink);
-  background: rgba(255, 255, 255, 0.20);
-  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.10);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.1);
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
   width: 100vw;
@@ -1040,11 +1150,6 @@ img {
   padding: 0;
 }
 
-.btn-start {
-  text-align: center;
-  padding: 0;
-}
-
 .music-author {
   color: var(--color-muted);
   position: fixed;
@@ -1058,9 +1163,16 @@ img {
 }
 
 @keyframes fades {
-  0%,100% { opacity: 0 }
-  40% { opacity: 1 }
-  80% {opacity: 1}
+  0%,
+  100% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
 }
 
 .visually-hidden {

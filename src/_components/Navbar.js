@@ -18,7 +18,7 @@ export default function NavBar() {
   return (
     <div className={clsx("navbar-container", fullScreenNav && "active")}>
       <div className={clsx("navbar", fullScreenNav && "active")}>
-        <Link href="/projects" className="name-label">
+        <Link href="/" className="name-label">
           esteban romero
         </Link>
         <div className={clsx("navigation", fullScreenNav && "active")}>
@@ -29,7 +29,7 @@ export default function NavBar() {
               pathname.startsWith("/projects") && "active",
             )}
           >
-            Projects
+            My work
           </Link>
           <Link
             href="/me"
@@ -40,17 +40,15 @@ export default function NavBar() {
           >
             Me
           </Link>
-          <a
-            href={links.github}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/cv"
             className={clsx(
               "navbar-link",
-              pathname.startsWith("https://github.com/esromerog") && "active",
+              pathname.startsWith("/cv") && "active",
             )}
           >
-            GitHub
-          </a>
+            CV
+          </Link>
           <a
             href={links.itch}
             target="_blank"
@@ -60,7 +58,7 @@ export default function NavBar() {
               pathname.startsWith("https://immortaicarus.itch.io") && "active",
             )}
           >
-            Games
+            Itch
           </a>
         </div>
         <button

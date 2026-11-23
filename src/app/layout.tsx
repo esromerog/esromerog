@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import '@/app/global.scss';
 import { sameAsJSON } from '@/app/_utils/sameAsJSON';
+import PageTransition from '@/_components/PageTransition';
 
 export const metadata: Metadata = {
   title: 'Esteban Romero',
@@ -26,6 +27,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(sameAsJSON).replace(/</g, "\\u003c") }}
         />
         <div id="root">{children}</div>
+        <PageTransition />
       </body>
     </html>
   );

@@ -1,10 +1,7 @@
 // import Garden from "./_components/three-js/garden";
-import { Suspense } from "react";
 import { slugList } from "./_utils/slugList";
 import { getAllProjectMetadata } from "./_utils/getAllMDX";
-import { metadata } from "../../content/beat-motion.mdx";
-import ProjectsSearch from "./_components/ProjectsSearch";
-import ProjectsTable from "./_components/ProjectsTable";
+import ProjectsBrowser from "./_components/ProjectsBrowser";
 import FragmentCanvas from "fragment-canvas";
 import ShaderBackground from "./_components/ShaderBackground";
 
@@ -20,10 +17,7 @@ export default async function ProjectsPage(props) {
       <div className="scrollable-projects">
         <div className="projects-text">
           <ProjectsHeader />
-          <ProjectsSearch />
-          <Suspense>
-            <ProjectsTable projects={projects} />
-          </Suspense>
+          <ProjectsBrowser projects={projects} />
         </div>
       </div>
     </div>
@@ -33,7 +27,7 @@ export default async function ProjectsPage(props) {
 function ProjectsHeader({}) {
   return (
     <div>
-      <h1>My Work</h1>
+      <h1>my work</h1>
       <p>
         My projects are focused on creating digital worlds tuned to our
         individual physiology and putting those tools in the hands of other

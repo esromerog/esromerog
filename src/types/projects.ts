@@ -1,3 +1,5 @@
+export type ProjectFilter = "games-art" | "science" | "education"
+
 export interface ProjectMetadata {
     name: string
     tags: {
@@ -8,6 +10,12 @@ export interface ProjectMetadata {
     role: string
     /** Hides the project from the projects page while it has no content. */
     draft?: boolean
+    /** Filter chips on the projects page this project appears under. */
+    filters?: ProjectFilter[]
+    /** Card image (path under /public). Cards without one render text-only. */
+    thumbnail?: string
+    /** Where the card's arrow goes instead of /projects/<slug> (e.g. an itch.io page). */
+    href?: string
     /** "YYYY" or "YYYY-MM" */
     start: string
     /** "YYYY" or "YYYY-MM", or "present" if ongoing. */
