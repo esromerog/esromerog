@@ -73,6 +73,7 @@
 
   .cv-entry {
     margin-top: 1.25rem;
+    scroll-margin-top: 6rem; // keeps /cv#<id> targets clear of the navbar
 
     h3 {
       font-family: "EB Garamond", serif;

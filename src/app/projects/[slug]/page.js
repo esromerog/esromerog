@@ -1,6 +1,7 @@
 import { P5Wrapper } from "../../../_components/p5Wrapper/p5Wrapper";
 import { backgroundSketch } from "./_components/p5background";
 import LinkButton from "../../../_components/LinkButton";
+import { Publications } from "../../../_components/Publication";
 import { slugList } from "../_utils/slugList";
 
 const SITE_NAME = "Esteban Romero";
@@ -60,6 +61,7 @@ export default async function Page({ params }) {
             ))}
           </div>
           <Project />
+          <Publications project={slug} />
         </div>
       </div>
     </div>

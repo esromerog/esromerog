@@ -1,5 +1,6 @@
 [
   {
+    "id": "mobi-2024",
     "role": "Conference Speaker",
     "name": "YouQuantified",
     "org": "5th International Mobile Brain / Imaging Conference in Piran, Slovenia",
@@ -8,9 +9,13 @@
       "Education",
       "Engineering"
     ],
-    "orgUrl": "https://www.zrs-kp.si/wp-content/uploads/2024/12/Zbornik-povzetkov-MOBI-CONFERENCE_ONLINE1.pdf#page=52"
+    "orgUrl": "https://www.zrs-kp.si/wp-content/uploads/2024/12/Zbornik-povzetkov-MOBI-CONFERENCE_ONLINE1.pdf#page=52",
+    "projects": [
+      "quantified-self"
+    ]
   },
   {
+    "id": "tedx-pictures-from-the-mind",
     "role": "TEDx Conference Speaker",
     "name": "Pictures From the Mind",
     "org": "Tecnológico de Monterrey, Guadalajara",
@@ -21,6 +26,7 @@
     "orgUrl": "https://www.ted.com/tedx/events/51496"
   },
   {
+    "id": "gs1-nyu-2024",
     "role": "Conference Speaker",
     "name": "Techno Futuristic Dreams of Virtual Utopias",
     "org": "GS1 New York University",
@@ -36,6 +42,7 @@
     ]
   },
   {
+    "id": "wearable-biosensors-sensors-2024",
     "role": "Publication",
     "name": "Wearable Biosensor Technologies in Education",
     "org": "MDPI Sensors Journal",
@@ -52,6 +59,7 @@
     ]
   },
   {
+    "id": "br41n-hackathon-2023",
     "role": "Award",
     "name": "A Thousand Word Speller",
     "org": "Virtual BR4IN.io Hackathon in the Programming & Arts Category",
@@ -65,6 +73,9 @@
     "categories": [
       "Interactive Art & Technology",
       "Engineering"
+    ],
+    "projects": [
+      "thousand-word-speller"
     ]
   }
 ]
