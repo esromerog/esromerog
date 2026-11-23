@@ -17,7 +17,11 @@ export default function ProjectCard({ slug, metadata }) {
   return (
     <article className="project-card">
       <div className="card-header">
-        <h2 className="card-box card-title">{name}</h2>
+        <h2 className="card-box card-title">
+          <Link {...linkProps} className="card-title-link">
+            {name}
+          </Link>
+        </h2>
         {year && (
           <p className="card-box card-year">
             {isHighlight(metadata) && <span className="card-star">✦</span>}

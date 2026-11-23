@@ -2,8 +2,10 @@ import type { Metadata } from 'next'
 import '@/app/global.scss';
 import { sameAsJSON } from '@/app/_utils/sameAsJSON';
 import PageTransition from '@/_components/PageTransition';
+import profile from '@/content/cv/profile.json';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(profile.links.website),
   title: 'Esteban Romero',
   description: 'Hi! Welcome to my portfolio website :)',
 }

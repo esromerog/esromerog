@@ -3,6 +3,38 @@ import { backgroundSketch } from "./_components/p5background";
 import LinkButton from "../../../_components/LinkButton";
 import { slugList } from "../_utils/slugList";
 
+const SITE_NAME = "Esteban Romero";
+
+// Title, description and card image for link previews (Slack, iMessage, Discord, X, ...).
+// Relative image paths resolve against metadataBase, set in the root layout.
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const { metadata } = await import(`@/content/${slug}.mdx`);
+  const { name, description, thumbnail } = metadata;
+  const title = `${name} | ${SITE_NAME}`;
+  const images = thumbnail ? [{ url: thumbnail, alt: name }] : undefined;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: `/projects/${slug}` },
+    openGraph: {
+      type: "article",
+      siteName: SITE_NAME,
+      url: `/projects/${slug}`,
+      title,
+      description,
+      images,
+    },
+    twitter: {
+      card: thumbnail ? "summary_large_image" : "summary",
+      title,
+      description,
+      images: thumbnail ? [thumbnail] : undefined,
+    },
+  };
+}
+
 export default async function Page({ params }) {
   const { slug } = await params;
   const { default: Project, metadata } = await import(`@/content/${slug}.mdx`);
